@@ -1,0 +1,36 @@
+.bg {
+    padding: 8vh 10vw;
+    text-align: center;
+    background-color: #181327;    
+}
+
+.title-anchor {
+    border: 1px solid #8143FA;
+    background-color: #8143FA;
+    margin: auto;
+    width: 0px;
+    height: 6vw;
+}
+
+.title {
+    font-size: 3vw;
+    color: #F5CB5C;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content {
+    font-size: 1.6vw;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+    .title-anchor {
+        height: 60px;
+    }
+    .title {
+        font-size: 36px;
+    }
+    .content {
+        font-size: 18px;
+    }
+}
