@@ -22,10 +22,15 @@
     position: absolute;
     color: #FFFFFF;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     align-items: center;
     top: 0px;
     min-height: 100vh;
-    min-width: 100vw;
+    width: 100vw;
+}
+
+.col-12 {
+    width: 99.99%;
 }

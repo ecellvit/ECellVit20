@@ -7,8 +7,10 @@ function Landing() {
             <div className="background"></div>
             <div className="overlay"></div>
             <div className="landing-data">
-                <h2>ENTREPRENEURSHIP CELL</h2>
-                <h4>VIT VELLORE</h4>
+                <div className="col-12">
+                    <h2>ENTREPRENEURSHIP CELL</h2>
+                    <h4>VIT VELLORE</h4>
+                </div>
             </div>
         </div>
     );
