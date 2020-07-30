@@ -1,0 +1,38 @@
+.top {
+    position: absolute;
+    top: 100px;
+    left: 26px;
+}
+.top span {
+    display: block;
+    background-color: #8143FA;
+    padding: 4px;
+    margin: 15px 2px;
+    border-radius: 50%;
+}
+
+.bottom span {
+    display: inline-block;
+    background-color: #8143FA;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+    margin: 15px 10px;
+    border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+    .top {
+        position: absolute;
+        top: 85vh;
+        left: auto;
+    }
+    .top span {
+        display: inline-block;
+        width: 20px;
+        margin: 15px 10px;
+    }
+}
