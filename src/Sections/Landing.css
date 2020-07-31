@@ -49,6 +49,7 @@
 .head {
     font-size: 5vw;
     font-weight: 700;
+    overflow-x: hidden;
 }
 
 .vit {
