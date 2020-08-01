@@ -49,6 +49,7 @@
 .head {
     font-size: 5vw;
     font-weight: 700;
+    overflow-x: hidden;
 }
 
 .vit {
@@ -65,6 +66,15 @@
     padding: 15px 35px;
     font-size: 1.6rem;
     font-weight: 700;
+}
+
+.scrolldown {
+    text-transform: uppercase;
+    transform: rotate(90deg);
+    position: absolute;
+    font-weight: 600;
+    bottom: 65px;
+    right: -20px;
 }
 
 @media (max-width: 991px) {
@@ -88,5 +98,27 @@
     }
     .head {
         font-size: 9vw;
+    }
+    .side-icons {
+        position: absolute;
+        top: 85vh;
+        left: auto;
+    }
+    .side-icons span {
+        display: inline-block;
+        width: 20px;
+        margin: 15px 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .iia {
+        font-size: 9vw;
+    }
+    .head {
+        font-size: 14vw;
+    }
+    .vit {
+        font-size: 7vw;
     }
 }

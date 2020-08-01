@@ -1,0 +1,36 @@
+.events {
+    display: block;
+    text-align: center;
+    padding: 24px;
+    width: 26%;
+}
+
+.events .eimg {
+    width: 85%;
+    max-height: 40%;
+}
+
+.events .ename {
+    font-size: 1.5rem;
+    color: #1A1327;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.events .edesc {
+    font-size: 1rem;
+    color: #000000;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .events {
+        width: 36%;
+    }
+}
+
+@media (max-width: 400px) {
+    .events {
+        width: 80%;
+    }
+}

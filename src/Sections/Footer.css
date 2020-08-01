@@ -1,0 +1,24 @@
+.footer {
+    background-color: #000000;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer a {
+    color: #FFFFFF;
+    font-size: 2vw;
+}
+
+.footer .iia {
+    color: #8143FA;
+} 
+
+@media (max-width: 600px) {
+    .footer .iia {
+        font-size: 6vw;
+    }
+    .footer a {
+        color: #FFFFFF;
+        font-size: 4vw;
+    }
+}

@@ -3,7 +3,7 @@ import './DarkBg.css';
 
 function DarkBg(props) {
     return (
-        <div className="bg p-2" id="about">
+        <div className="bg">
             <div className="title-anchor"></div>
             <h2 className="title">{props.head}</h2>
             <p className="content">{props.content}</p>
