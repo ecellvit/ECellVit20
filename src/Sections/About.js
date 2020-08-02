@@ -9,9 +9,9 @@ function About() {
     const whatVdo = "VIT TBI (Technology Business Incubator) has been established at Vellore Institute of Technology with the Sponsorship of the Department of Science and Technology, Government of India to assist budding entrepreneurs incubate their technology venture. VIT-TBI leverages all the resources that are available within the campus such as access to laboratory, workshops, development and testing centres. In addition to these resources, VIT-TBI also has a network of eminent professionals, academicians, bankers, venture capitalists and businessmen, who can extend support to the budding ventures.";
     return (
         <span id="about">
-            <DarkBg id="about" head="About" content={about} />
+            <DarkBg id="about" head="About Us" content={about} />
             <Counters />
-            <DarkBg head="About VIT &nbsp;TBI" content={whatVdo} />
+            <DarkBg head="VIT &nbsp;TBI" content={whatVdo} />
             <Events />
         </span>
     );
