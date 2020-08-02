@@ -13,15 +13,15 @@
 
 .bottom span {
     display: inline-block;
-    background-color: #8143FA;
-    width: 32px;
-    height: 32px;
-    padding: 8px;
-    font-size: 24px;
-    text-align: center;
-    color: #ffffff;
-    margin: 15px 10px;
-    border-radius: 50%;
+        background-color: #8143FA;
+        width: 16px;
+        height: 16px;
+        padding: 4px;
+        font-size: 12px;
+        text-align: center;
+        color: #ffffff;
+        margin: 10px 7px;
+        border-radius: 50%;
 }
 
 @media (max-width: 600px) {
@@ -34,5 +34,17 @@
         display: inline-block;
         width: 20px;
         margin: 15px 10px;
+    }
+    .bottom span {
+        display: inline-block;
+        background-color: #8143FA;
+        width: 16px;
+        height: 16px;
+        padding: 4px;
+        font-size: 12px;
+        text-align: center;
+        color: #ffffff;
+        margin: 10px 7px;
+        border-radius: 50%;
     }
 }

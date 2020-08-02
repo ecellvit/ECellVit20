@@ -1,36 +1,88 @@
 .events {
     display: block;
     text-align: center;
-    padding: 24px;
+    margin: 24px;
+    padding-bottom: 25px;
     width: 26%;
     height: fit-content;
+    box-shadow: 0 2px 2px #0003;
+    transition: all 0.3s ease-in-out;
+}
+
+.events .eimgdesc {
+    position: relative;
 }
 
 .events .eimg {
-    width: 85%;
-    max-height: 40%;
+    width: 100%;
 }
 
 .events .ename {
     font-size: 1.5rem;
+    margin-top: -4px;
+    padding: 4px 12px;
     color: #1A1327;
     font-weight: 600;
     text-transform: uppercase;
-}
-
-.events .edesc {
-    font-size: 1rem;
-    color: #000000;
-    text-align: left;
-    padding: 5px 20px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6; /* No of lines */
+    -webkit-line-clamp: 2;
+    /* No of lines */
     /* The below code is fallback for old browsers */
-    line-height: 1.4rem; /* Reference to font size */
-    max-height: 8.4rem; /* line-height*no.of lines */
+    line-height: 2rem;
+    /* Reference to font size */
+    max-height: 4rem;
+    /* line-height*no.of lines */
+}
+
+.events .edesc {
+    font-size: 1rem;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 25px 30px;
+    padding-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    /* No of lines */
+    /* The below code is fallback for old browsers */
+    line-height: 1.4rem;
+    /* Reference to font size */
+    max-height: 8.4rem;
+    /* line-height*no.of lines */
+}
+
+.events .img-overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #8141FAEE;
+    color: #FFFFFF;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.events:hover .img-overlay {
+    bottom: 0;
+    height: 100%;
+}
+
+.events:hover {
+    box-shadow: 0 0 20px #1A1327;
+    background-color: #8141fa;
+}
+
+.events:hover .ename {
+    color: #FFFFFF;
 }
 
 @media (max-width: 768px) {
@@ -38,7 +90,7 @@
         width: 36%;
     }
     .events .edesc {
-        padding: 5px 10px;
+        padding: 15px 20px;
     }
 }
 
