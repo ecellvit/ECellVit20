@@ -1,0 +1,22 @@
+.g_imgs{
+    margin:20px;
+    width: 28%;
+    height: auto;
+    transition: all 0.3s ease-in;
+}
+
+.g_imgs:hover {
+    box-shadow: 0 0 20px #181327;
+}
+
+@media (max-width: 991px) {
+    .g_imgs {
+        width: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    .g_imgs {
+        width: 85%;
+    }
+}

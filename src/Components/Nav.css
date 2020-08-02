@@ -1,13 +1,28 @@
 .topnav {
   position: fixed;
   top: 0;
+  z-index: 10;
   width: calc(100vw - 52px);
   overflow: hidden;
   padding: 15px 26px;
   transition: all 0.3s ease-in;
+  opacity: 1;
 }
 
+/* .hidden {
+  
+}
+
+.hidden:hover {
+  opacity: 1;
+} */
+
 .scrolled {
+  opacity: 0.05;
+}
+
+.scrolled:hover {
+  opacity: 1;
   background-color: #181327ee;
 }
 
@@ -15,7 +30,7 @@
   float: left;
 }
 
-.topnav a{
+.topnav a {
   float: right;
   display: block;
   color: #ffffff;
@@ -50,6 +65,10 @@
     color: #FFF;
     font-size: 24px;
     padding: 10px;
+  }
+  .scrolled {
+    opacity: 1;
+    background-color: #181327ee;
   }
   .topnav .icon:focus {
     outline: none;

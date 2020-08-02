@@ -1,12 +1,12 @@
 import React from 'react';
 import DarkBg from '../Components/DarkBg';
-import Gallery_pics from '../Components/Gallery_pics';
+import GalleryPics from '../Components/GalleryPics';
 
 function Gallery(){
 	return(
-		<div className="gallery">
-            <DarkBg id="gallery" head="Gallery"/>
-            <Gallery_pics/>
+		<div className="gallery" id="gallery">
+            <DarkBg head="Gallery"/>
+            <GalleryPics/>
         </div>
 		)
 }

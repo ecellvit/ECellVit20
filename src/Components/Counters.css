@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 28px;
+    /* padding: 28px; */
 }
 
 .counters {
