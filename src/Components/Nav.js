@@ -7,11 +7,11 @@ function Nav() {
     const [nav, setNav] = useState(false);
     const toggle = () => {
         if(nav === true){ 
-            setNav(false);
             setScroll('');
+            setTimeout(setNav(false), 5000);
         }else {
-            setNav(true);
             setScroll('scrolled');
+            setNav(true);
         }
     };
     window.addEventListener('scroll', () => {

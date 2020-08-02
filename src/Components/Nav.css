@@ -9,21 +9,9 @@
   opacity: 1;
 }
 
-/* .hidden {
-  
-}
-
-.hidden:hover {
-  opacity: 1;
-} */
-
 .scrolled {
-  opacity: 0.05;
-}
-
-.scrolled:hover {
   opacity: 1;
-  background-color: #181327ee;
+  background-color: #181327fe;
 }
 
 .topnav img {
@@ -42,7 +30,7 @@
 }
 
 .topnav a:hover {
-  text-shadow: 0 0 3px #eee;
+  text-shadow: 0 0 1px #eee;
 }
 
 .topnav .icon {
@@ -65,10 +53,6 @@
     color: #FFF;
     font-size: 24px;
     padding: 10px;
-  }
-  .scrolled {
-    opacity: 1;
-    background-color: #181327ee;
   }
   .topnav .icon:focus {
     outline: none;

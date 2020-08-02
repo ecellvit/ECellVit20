@@ -2,7 +2,7 @@
     margin:20px;
     width: 28%;
     height: auto;
-    transition: all 0.3s ease-in;
+    transition: all 0.1s ease-in;
 }
 
 .g_imgs:hover {

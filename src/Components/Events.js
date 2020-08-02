@@ -4,9 +4,14 @@ import './Events.css';
 function Event(props) {
     return (
         <div className="events">
-            <img className="eimg" src="./assets/images/ecell-black.png" alt={props.name} />
+            <div className="eimgdesc">
+                <img className="eimg" src="./assets/images/discuss.jpg" alt={props.name} />
+                <div className="img-overlay">
+                    <div className="edesc">{props.desc}</div>
+                </div>
+            </div>
+
             <div className="ename">{props.name}</div>
-            <div className="edesc">{props.desc}</div>
         </div>
     );
 }

@@ -1,24 +1,39 @@
 .footer {
     background-color: #000000;
     text-align: center;
-    padding: 20px;
+    padding: 80px;
 }
 
 .footer a {
     color: #FFFFFF;
-    font-size: 2vw;
+    font-size: 1.5vw;
+}
+
+.footer img {
+    height: 5vw;
 }
 
 .footer .iia {
     color: #8143FA;
+    font-size: 2vw;
+    margin-bottom: 1.3rem;
 } 
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+    .footer img {
+        height: 10vw;
+    }
     .footer .iia {
-        font-size: 6vw;
+        font-size: 3vw;
     }
     .footer a {
         color: #FFFFFF;
-        font-size: 4vw;
+        font-size: 2.8vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer img {
+        height: 14vw;
     }
 }
