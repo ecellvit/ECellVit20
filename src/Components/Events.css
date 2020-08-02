@@ -3,6 +3,7 @@
     text-align: center;
     padding: 24px;
     width: 26%;
+    height: fit-content;
 }
 
 .events .eimg {
@@ -21,15 +22,22 @@
     font-size: 1rem;
     color: #000000;
     text-align: left;
+    padding: 5px 20px;
+    overflow: hidden;
+    max-height: 130px;
+    text-overflow: ellipsis;
 }
 
 @media (max-width: 768px) {
     .events {
         width: 36%;
     }
+    .events .edesc {
+        padding: 5px 10px;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .events {
         width: 80%;
     }
