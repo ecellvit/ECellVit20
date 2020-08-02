@@ -24,8 +24,13 @@
     text-align: left;
     padding: 5px 20px;
     overflow: hidden;
-    max-height: 130px;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6; /* No of lines */
+    /* The below code is fallback for old browsers */
+    line-height: 1.4rem; /* Reference to font size */
+    max-height: 8.4rem; /* line-height*no.of lines */
 }
 
 @media (max-width: 768px) {
