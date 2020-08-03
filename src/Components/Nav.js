@@ -21,12 +21,11 @@ function Nav() {
         }
         setScroll(activeClass);
      });
-return (
+    return (
         <div className={`topnav ${scrolled}`}>
             <img src="./assets/images/ecell-white.png" alt="E-cell VIT" height="45" />
             <Link to="gallery" spy={true} smooth={true} offset={0} duration={500}>Gallery</Link>
             <Link to="team" spy={true} smooth={true} offset={0} duration={500}>Team</Link>
-            <Link to="activities" spy={true} smooth={true} offset={0} duration={500}>Activities</Link>
             <Link to="about" spy={true} smooth={true} offset={0} duration={500}>About</Link>
             <Link to="home" spy={true} smooth={true} offset={0} duration={500}>home</Link>
             <button className="icon" onClick={toggle}>
@@ -37,7 +36,6 @@ return (
                 <div className="sidenav">
                     <Link to="home" spy={true} smooth={true} offset={-70} duration={500}>Home</Link>
                     <Link to="about" spy={true} smooth={true} offset={-70} duration={500}>About</Link>
-                    <Link to="activities" spy={true} smooth={true} offset={-70} duration={500}>Activities</Link>
                     <Link to="team" spy={true} smooth={true} offset={-70} duration={500}>Team</Link>
                     <Link to="gallery" spy={true} smooth={true} offset={-70} duration={500}>Gallery</Link>
                 </div>

@@ -4,15 +4,13 @@
     background-color: #181327;    
 }
 
-/*.title-anchor
- {
+.title-anchor {
     border: 1px solid #8143FA;
     background-color: #8143FA;
     margin: auto;
     width: 0px;
     height: 6vw;
 }
-*/
 
 .title {
     font-size: 3vw;
