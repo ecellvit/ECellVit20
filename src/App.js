@@ -4,6 +4,8 @@ import About from './Sections/About';
 import Landing from './Sections/Landing';
 import Footer from './Sections/Footer';
 import Gallery from './Sections/Gallery';
+import Team from './Sections/Team';
+import Activities from './Sections/Activities';
 
 function App() {
   return (
