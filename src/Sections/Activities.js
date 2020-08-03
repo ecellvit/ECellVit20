@@ -1,6 +1,5 @@
 import React from 'react';
 import DarkBg from '../Components/DarkBg';
-import './Activities.css'
 import Events from '../Components/Events';
 
 function Activities() {
