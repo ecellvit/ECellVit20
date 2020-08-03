@@ -10,7 +10,7 @@ import Activities from './Sections/Activities';
 function App() {
   return (
     <div className="App">
-      <Landing id="home"/>
+      <Landing/>
       <About/>
       <Activities/>
       <Team/>      
