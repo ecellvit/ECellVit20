@@ -18,6 +18,8 @@ function Nav() {
         let activeClass = '';
         if (window.scrollY > 10){
             activeClass = 'scrolled';
+        } else if(nav === true && window.innerWidth < 600) {
+            activeClass = 'scrolled';
         }
         setScroll(activeClass);
      });
