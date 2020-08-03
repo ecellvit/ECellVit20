@@ -10,6 +10,8 @@ function App() {
     <div className="App">
       <Landing id="home"/>
       <About/>
+      <Activities/>
+      <Team/>      
       <Gallery/>
       <Footer/>
     </div>
