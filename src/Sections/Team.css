@@ -1,34 +1,89 @@
-.board{
+.team{
+	display: flex;
+	justify-content: center;
 	background-color: #181327; 
+	flex-wrap: wrap;
 }
 
-#name{
+.one {
+	display: block;
+	width: 80%;
+}
+
+.two {
+	display: block;
+	width: 40%;
+}
+
+.three {
+	display: block;
+	width: 26%;
+}
+
+.name{
 	color:#FFFFFF;
 	margin-bottom: 0px;
 	text-align: center;
-	font: Bold 37px/45px Lato;
+	font-size: 1.8rem;
 	opacity: 1;
 }
 
-#designation{
-	color:#FFFFFF;
-	margin-bottom: 0px;
+.desig{
+	margin-top: 2px;
 	text-align: center;
-	font: Bold 37px/45px Lato;
+	font-size: 1.5rem;
 	letter-spacing: 0px;
 	color: #737373;
 	text-transform: capitalize;
 	opacity: 1;
-	margin-bottom: 0px;
+	padding-bottom: 20px;
 }
 
-#pic{
+.pic{
+	padding-top: 10px;
 	margin-right: auto;
     margin-left: auto;
     overflow:hidden;
 	display: block;
-	width: 262px;
-    height:262px;
+	width: 200px;
+    height:200px;
     border-radius: 50%;
 }
 
+.one-always {
+	margin: auto;
+}
+
+.two-in-row {
+	width: 49%;
+}
+
+@media (max-width:1200px) {
+	.pic {
+		width: 160px;
+		height: 160px;
+	}
+}
+
+@media (max-width: 991px) {
+	.pic {
+		width: 140px;
+		height: 140px;
+	}
+	.name{
+		font-size: 1.5rem;
+	}
+	.desig {
+		font-size: 1.3rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.pic {
+		width: 160px;
+		height: 160px;
+	}
+	.one, .two, .three {
+		width:95%;
+	}
+}
