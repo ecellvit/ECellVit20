@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Loader.css'
 
-function Loader() {
+function Loader(props) {
+    const [cls, setcls] = useState('');
+    setTimeout(()=> {setcls('moved')}, props.timeout);
     return (
-        <div className="loading-screen">
+        <div className={`loading-screen ${cls}`}>
             <svg width="100" height="100" viewBox="0 0 44 44"
                 xmlns="http://www.w3.org/2000/svg"
                 stroke="#00BFFF"

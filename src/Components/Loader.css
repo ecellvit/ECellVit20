@@ -1,14 +1,21 @@
 .loading-screen {
     display: flex;
     position: fixed;
-    /* top: 0; */
     justify-content: center;
     align-items: center;
+    left: 0;
+    opacity: 1;
     z-index: 100;
     background-color: #5d3f9b;
     height: 100%;
     width: 100vw;
-    animation: fade 3.7s ease-in-out forwards;
+    /* animation: fade 3.7s ease-in-out forwards; */
+    transition: all 1s ease-in-out;
+}
+
+.moved {
+    left: 100%;
+    opacity: 0.9;
 }
 
 @keyframes fade {

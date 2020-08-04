@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <Loader/>
+      <Loader timeout="3000"/>
       <Landing/>
       <About/>
       <Activities/>
