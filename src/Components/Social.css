@@ -3,25 +3,29 @@
     top: 100px;
     left: 26px;
 }
+
 .top span {
     display: block;
     background-color: #8143FA;
-    padding: 4px;
+    padding: 8px;
+    font-size: 22px;
     margin: 15px 2px;
     border-radius: 50%;
+    width: 24px;
+    height: 24px;
 }
 
 .bottom span {
     display: inline-block;
-        background-color: #8143FA;
-        width: 16px;
-        height: 16px;
-        padding: 4px;
-        font-size: 12px;
-        text-align: center;
-        color: #ffffff;
-        margin: 10px 7px;
-        border-radius: 50%;
+    background-color: #8143FA;
+    width: 16px;
+    height: 16px;
+    padding: 4px;
+    font-size: 12px;
+    text-align: center;
+    color: #ffffff;
+    margin: 10px 7px;
+    border-radius: 50%;
 }
 
 @media (max-width: 600px) {
@@ -33,6 +37,9 @@
     .top span {
         display: inline-block;
         width: 20px;
+        height: 20px;
+        padding: 4px;
+        font-size: 16px;
         margin: 15px 10px;
     }
     .bottom span {
