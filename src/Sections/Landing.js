@@ -31,7 +31,7 @@ function Landing() {
                     <span className="iia">IDEATE. INNOVATE. ACTUATE.</span>
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
-                    <button className="btn-know">Know More</button>
+                    {/* <button className="btn-know">Know More</button> */}
                 </div>
                 <Link className="scrolldown" to="about" spy={true} smooth={true} offset={0} duration={500}>Scroll Down <i className="fa fa-angle-right"></i></Link>
             </div>

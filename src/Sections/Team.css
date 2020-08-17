@@ -20,6 +20,11 @@
 	width: 26%;
 }
 
+.bmember {
+	margin: auto;
+	width: fit-content;
+}
+
 .name{
 	color:#FFFFFF;
 	margin-bottom: 0px;
@@ -47,15 +52,8 @@
 	display: block;
 	width: 200px;
     height:200px;
-    border-radius: 50%;
-}
-
-.one-always {
-	margin: auto;
-}
-
-.two-in-row {
-	width: 49%;
+	border-radius: 50%;
+	transition: all 0.3s ease;
 }
 
 @media (max-width:1200px) {
@@ -86,4 +84,8 @@
 	.one, .two, .three {
 		width:95%;
 	}
+}
+
+.bmember:hover .pic{
+	transform: rotateY(180deg);
 }

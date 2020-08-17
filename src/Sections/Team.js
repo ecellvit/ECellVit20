@@ -5,9 +5,14 @@ import './Team.css';
 function Board(props) {
 	return (
 		<div className={props.cls}>
-			<img className="pic" src={props.pic} alt={props.name} />
-			<h2 className="name">{props.name}</h2>
-			<h3 className="desig">{props.designation}</h3>
+			<div className="bmember">
+				<img className="pic" src={props.pic} alt={props.name} />
+				<div className="b-overlay">
+					
+				</div>
+				<h2 className="name">{props.name}</h2>
+				<h3 className="desig">{props.designation}</h3>
+			</div>
 		</div>
 	);
 }
