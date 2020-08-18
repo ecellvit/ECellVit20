@@ -1,5 +1,5 @@
-.g_imgs{
-    margin:20px;
+.g_imgs {
+    margin: 20px;
     width: 28%;
     overflow: hidden;
     position: relative;
@@ -19,7 +19,7 @@
     bottom: 100%;
     left: 0;
     right: 0;
-    background-color: #8141FA22;
+    background-color: #8141FA33;
     color: #FFFFFF;
     overflow: hidden;
     width: 100%;

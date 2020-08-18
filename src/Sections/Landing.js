@@ -8,18 +8,18 @@ function Landing() {
     const [head, setHead] = useState('Entreprenuership Cell');
     window.addEventListener('resize', () => {
         var txt = "E-Cell"
-        if(window.innerWidth > 400){
+        if (window.innerWidth > 400) {
             txt = 'Entreprenuership Cell';
         }
         setHead(txt);
-     });
-     window.addEventListener('load', () => {
+    });
+    window.addEventListener('load', () => {
         var txt = "E-Cell"
-        if(window.innerWidth > 400){
+        if (window.innerWidth > 400) {
             txt = 'Entreprenuership Cell';
         }
         setHead(txt);
-     });
+    });
     return (
         <div id="home">
             <div className="background"></div>

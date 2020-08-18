@@ -6,24 +6,24 @@ function Nav() {
     const [scrolled, setScroll] = useState('');
     const [nav, setNav] = useState(false);
     const toggle = () => {
-        if(nav === true){ 
+        if (nav === true) {
             setScroll('');
             setTimeout(setNav(false), 5000);
-        }else {
+        } else {
             setScroll('scrolled');
             setNav(true);
         }
     };
     window.addEventListener('scroll', () => {
         let activeClass = '';
-        if (window.scrollY > 10){
+        if (window.scrollY > 10) {
             activeClass = 'scrolled';
-        } else if(nav === true && window.innerWidth < 600) {
+        } else if (nav === true && window.innerWidth < 600) {
             activeClass = 'scrolled';
         }
         setScroll(activeClass);
-     });
-return (
+    });
+    return (
         <div className={`topnav ${scrolled}`}>
             <img src="./assets/images/ecell-white.png" alt="E-cell VIT" height="45" />
             <Link to="gallery" spy={true} smooth={true} offset={0} duration={800}>Gallery</Link>

@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* padding: 28px; */
+    padding: 40px 0px;
 }
 
 .counters {
@@ -12,9 +12,7 @@
     width: 18%;
 }
 
-
-
-.counters .count{
+.counters .count {
     font-size: 1.8rem;
     font-weight: 800;
     color: #000000;
@@ -27,18 +25,15 @@
     text-transform: uppercase;
 }
 
-
-
 @media (max-width: 768px) {
     .counters {
         padding: 18px;
         width: 36%;
     }
-    .counters .count{
+    .counters .count {
         font-size: 1.5rem;
     }
     .counters .spec {
         font-size: 1.2rem;
     }
 }
-

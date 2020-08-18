@@ -9,16 +9,15 @@ import Team from './Sections/Team';
 import Activities from './Sections/Activities';
 
 function App() {
-
   return (
     <div className="App">
-      <Loader timeout="3000"/>
-      <Landing/>
-      <About/>
-      <Activities/>
-      <Team/>      
-      <Gallery/>
-      <Footer/>
+      <Loader timeout="3000" />
+      <Landing />
+      <About />
+      <Activities />
+      <Team />
+      <Gallery />
+      <Footer />
     </div>
   );
 }
