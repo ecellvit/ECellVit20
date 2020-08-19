@@ -13,12 +13,16 @@
     height: 24px;
 }
 
+.bottom {
+    margin-top: 10px;
+}
+
 .bottom a {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    padding: 4px;
-    font-size: 16px !important;
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    font-size: 22px !important;
     margin: 10px 7px;
 }
 
@@ -46,10 +50,10 @@
     .bottom a {
         display: inline-block;
         background-color: #8143FA;
-        width: 18px;
-        height: 18px;
-        padding: 3px;
-        font-size: 15px !important;
+        width: 20px;
+        height: 20px;
+        padding: 4px;
+        font-size: 16px !important;
         text-align: center;
         color: #ffffff;
         margin: 10px 5px;

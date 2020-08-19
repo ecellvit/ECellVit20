@@ -17,6 +17,7 @@
 
 .subhead {
     font-size: 1.6vw;
+    font-weight: 600;
     text-align: center;
     color: #ffffff;
 }
@@ -28,7 +29,7 @@
     .title {
         font-size: 36px;
     }
-    .content .subhead{
+    .content, .subhead{
         font-size: 18px;
     }
 }

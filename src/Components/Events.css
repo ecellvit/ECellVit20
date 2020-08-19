@@ -15,7 +15,8 @@
 
 .events .eimg {
     width: 100%;
-    min-height: 160px;
+    height: 200px;
+    object-fit: cover;
 }
 
 .events .ename {
