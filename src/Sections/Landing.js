@@ -5,18 +5,18 @@ import { Link } from "react-scroll";
 import './Landing.css';
 
 function Landing() {
-    const [head, setHead] = useState('Entreprenuership Cell');
+    const [head, setHead] = useState('Entrepreneurship Cell');
     window.addEventListener('resize', () => {
         var txt = "E-Cell"
         if (window.innerWidth > 400) {
-            txt = 'Entreprenuership Cell';
+            txt = 'Entrepreneurship Cell';
         }
         setHead(txt);
     });
     window.addEventListener('load', () => {
         var txt = "E-Cell"
         if (window.innerWidth > 400) {
-            txt = 'Entreprenuership Cell';
+            txt = 'Entrepreneurship Cell';
         }
         setHead(txt);
     });
@@ -31,9 +31,8 @@ function Landing() {
                     <span className="iia">IDEATE. INNOVATE. ACTUATE.</span>
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
-                    {/* <button className="btn-know">Know More</button> */}
                 </div>
-                <Link className="scrolldown" to="about" spy={true} smooth={true} offset={0} duration={500}>Scroll Down <i className="fa fa-angle-right"></i></Link>
+                <Link className="scrolldown" to="about" spy={true} smooth={true} offset={0} duration={800}>Scroll Down <i className="fa fa-angle-right"></i></Link>
             </div>
         </div>
     );

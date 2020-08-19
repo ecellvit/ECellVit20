@@ -3,10 +3,9 @@ import DarkBg from '../Components/DarkBg';
 import Events from '../Components/Events';
 
 function Activities() {
-    const events = "Our Events";
     return (
         <span id="activities">
-            <DarkBg head="Activities" content={events} />
+            <DarkBg head="Activities" subhead="Our Events" />
             <Events />
         </span>
     );

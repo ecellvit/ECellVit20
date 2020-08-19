@@ -14,12 +14,12 @@ function Gimg(props) {
 function GalleryPics() {
 	return (
 		<div id="GalleryPics" className="d-flex">
-			<Gimg src="./assets/images/apple.jpg" />
-			<Gimg src="./assets/images/awesome.jpg" />
-			<Gimg src="./assets/images/skool.jpg" />
-			<Gimg src="./assets/images/speech.jpg" />
-			<Gimg src="./assets/images/entre.jpg" />
-			<Gimg src="./assets/images/idea.jpg" />
+			<Gimg src="./assets/Gallery/img1.jpg" />
+			<Gimg src="./assets/Gallery/img2.jpg" />
+			<Gimg src="./assets/Gallery/img3.jpg" />
+			<Gimg src="./assets/Gallery/img4.jpg" />
+			<Gimg src="./assets/Gallery/img5.jpg" />
+			<Gimg src="./assets/Gallery/img6.jpg" />
 		</div>
 	)
 }

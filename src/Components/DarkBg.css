@@ -11,6 +11,13 @@
 
 .content {
     font-size: 1.6vw;
+    text-align: justify;
+    color: #ffffff;
+}
+
+.subhead {
+    font-size: 1.6vw;
+    text-align: center;
     color: #ffffff;
 }
 
@@ -21,7 +28,7 @@
     .title {
         font-size: 36px;
     }
-    .content {
+    .content .subhead{
         font-size: 18px;
     }
 }

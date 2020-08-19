@@ -5,6 +5,7 @@ function DarkBg(props) {
     return (
         <div className="bg">
             <h2 className="title">{props.head}</h2>
+            <p className="subhead">{props.subhead}</p>
             <p className="content">{props.content}</p>
         </div>
     );
