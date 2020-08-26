@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DarkBg from '../Components/DarkBg';
 import './Team.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Board(props) {
+	useEffect(() => {
+		AOS.init();
+	})
 	return (
-		<div className={props.cls}>
+		<div className={props.cls} data-aos="zoom-in" data-aos-offset="-20">
 			<div className="bmember">
 				<div className="flip-box">
 					<div className="flip-box-inner">

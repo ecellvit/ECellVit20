@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './GalleryPics.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Gimg(props) {
+	useEffect(()=> {
+		AOS.init();
+	})
 	return (
-		<div className="g_imgs">
+		<div className="g_imgs" data-aos="zoom-in-left" data-aos-offset="-20">
 			<img alt="E-cell VIT" src={props.src} />
 			<div className="img-overlay">
 			</div>

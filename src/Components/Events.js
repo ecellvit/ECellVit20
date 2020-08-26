@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Events.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Event(props) {
+    useEffect(() => {
+        AOS.init();
+    })
     return (
-        <div className="events">
+        <div className="events" data-aos="zoom-out-up" data-aos-offset="-20">
             <div className="eimgdesc">
                 <img className="eimg" src={props.img} alt={props.name} />
                 <div className="img-overlay">
