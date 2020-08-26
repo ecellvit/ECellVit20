@@ -41,19 +41,19 @@
     }
     .top a {
         display: inline-block;
-        width: 20px;
-        height: 20px;
+        width: 6vw;
+        height: 6vw;
         padding: 4px;
-        font-size: 16px;
+        font-size: 5vw;
         margin: 15px 10px;
     }
     .bottom a {
         display: inline-block;
         background-color: #8143FA;
-        width: 20px;
-        height: 20px;
+        width: 6vw;
+        height: 6vw;
         padding: 4px;
-        font-size: 16px !important;
+        font-size: 5vw !important;
         text-align: center;
         color: #ffffff;
         margin: 10px 5px;
