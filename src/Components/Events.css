@@ -43,19 +43,19 @@
     font-size: 1rem;
     color: #FFFFFF;
     text-align: left;
-    padding: 25px 30px;
+    padding: 0px 30px;
     padding-bottom: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6;
-    /* No of lines */
-    /* The below code is fallback for old browsers */
-    line-height: 1.4rem;
-    /* Reference to font size */
-    max-height: 8.4rem;
-    /* line-height*no.of lines */
+    overflow-y: auto;
+    max-height: 120px;
+}
+
+.events .edesc::-webkit-scrollbar {
+    width: 2px;
+}
+
+.events .edesc::-webkit-scrollbar-thumb {
+    background-color: #ffffff55;
+    border-radius: 5px;
 }
 
 .events .img-overlay {
