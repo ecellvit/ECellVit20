@@ -3,7 +3,15 @@ import './Loader.css'
 
 function Loader(props) {
     const [cls, setcls] = useState('');
-    setTimeout(()=> {setcls('moved')}, props.timeout);
+    let test = 0;
+    setTimeout(() => {test = 1}, props.timeout);
+    window.addEventListener('load', () => {
+        if(test === 1) {
+            setcls('moved');
+        } else {
+            setTimeout(() => {setcls('moved')}, props.timeout/2);
+        }
+    })
     return (
         <div className={`loading-screen ${cls}`}>
             <svg width="100" height="100" viewBox="0 0 44 44"

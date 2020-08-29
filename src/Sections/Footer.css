@@ -16,8 +16,8 @@
 .footer .iia {
     color: #8143FA;
     font-size: 2vw;
-    margin-bottom: 1.3rem;
-} 
+    margin: 1.3rem 0;
+}
 
 @media (max-width: 900px) {
     .footer img {
@@ -27,7 +27,6 @@
         font-size: 3vw;
     }
     .footer a {
-        color: #FFFFFF;
         font-size: 2.8vw;
     }
 }
@@ -35,5 +34,11 @@
 @media (max-width: 600px) {
     .footer img {
         height: 14vw;
+    }
+    .footer .iia {
+        font-size: 4vw;
+    }
+    .footer a {
+        font-size: 3.8vw;
     }
 }

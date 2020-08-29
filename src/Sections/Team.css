@@ -1,7 +1,7 @@
-.team{
+.team {
 	display: flex;
 	justify-content: center;
-	background-color: #181327; 
+	background-color: #181327;
 	flex-wrap: wrap;
 }
 
@@ -23,17 +23,18 @@
 .bmember {
 	margin: auto;
 	width: fit-content;
+	padding: 10px;
 }
 
-.name{
-	color:#FFFFFF;
+.name {
+	color: #FFFFFF;
 	margin-bottom: 0px;
 	text-align: center;
 	font-size: 1.8rem;
 	opacity: 1;
 }
 
-.desig{
+.desig {
 	margin-top: 2px;
 	text-align: center;
 	font-size: 1.5rem;
@@ -44,94 +45,76 @@
 	padding-bottom: 20px;
 }
 
-.pic{
-	padding-top: 10px;
-	margin-right: auto;
-    margin-left: auto;
-    overflow:hidden;
-	display: block;
-	width: 200px;
-    height:200px;
-	border-radius: 50%;
-	transition: all 0.5s ease;
-}
-
-@media (max-width:1200px) {
-	.pic {
-		width: 160px;
-		height: 160px;
-	}
-}
-
 @media (max-width: 991px) {
-	.pic {
-		width: 140px;
-		height: 140px;
-	}
-	.name{
+	.name {
 		font-size: 1.5rem;
 	}
 	.desig {
 		font-size: 1.3rem;
 	}
+	.three {
+		width: 40%;
+	}
 }
 
-@media (max-width: 768px) {
-	.pic {
-		width: 160px;
-		height: 160px;
-	}
+@media (max-width: 650px) {
 	.one, .two, .three {
-		width:95%;
+		width: 95%;
 	}
 }
 
-/*.bmember:hover .pic{
-	transform: rotateY(180deg);
-}*/
-
-.flip-box{
-  	background-color: transparent;
-  	padding-top: 10px;
+.flip-box {
+	background-color: transparent;
+	padding-top: 10px;
 	margin-right: auto;
-    margin-left: auto;
-    overflow:hidden;
+	margin-left: auto;
+	overflow: hidden;
 	display: block;
 	width: 200px;
-    height:200px;
+	height: 200px;
 	border-radius: 50%;
 }
 
 .flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
 }
 
-.flip-box:hover .flip-box-inner {
-  transform: rotateY(180deg);
+.flip-box:hover .flip-box-back {
+	opacity: 1;
 }
 
 .flip-box-front, .flip-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
 }
 
 .flip-box-front {
-  background-color: #bbb;
-  color: black;
+	background-color: #bbb;
+	color: black;
+}
+
+.flip-box-front img {
+	width: 100%;
+	border-radius: 50%;
 }
 
 .flip-box-back {
-  background-color: #555;
-  font-size:64px;
-  color: blue;
-  transform: rotateY(180deg);
+	background-color: #0077b5aa;
+	font-size: 64px;
+	opacity: 0;
+	transition: all 0.3s ease;
 }
 
+.flip-box-back a {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: #fff;
+}

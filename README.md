@@ -1,4 +1,4 @@
-# Entreprenuership Cell - VIT
+# Entrepreneurship Cell - VIT
 
 A website made with React-JS for the official portal of E-cell VIT.
 
