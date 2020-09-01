@@ -1,6 +1,6 @@
 .background {
     background-color: #000000;
-    background-image: url('/assets/cover.png');
+    background-image: url('/assets/final_cover.jpg');
     filter: blur(2px);
     -webkit-filter: blur(2px);
     background-size: cover;
