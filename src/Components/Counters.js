@@ -18,10 +18,10 @@ function Counter(props) {
 function Counters() {
     return (
         <div className="d-flex">
-            <Counter count="15908" spec="students" />
+            <Counter count="5000" spec="students" />
             <Counter count="289" spec="start ups" />
             <Counter count="210" spec="mentors" />
-            <Counter count="126" spec="incubetees" />
+            <Counter count="100" spec="incubatees" />
         </div>
     );
 }
