@@ -541,7 +541,7 @@ loading
 .loader>.cube>.sides>.loader-logo {
     background-color: transparent;
     border: none;
-    background-image: url('https://ecell.vinayakg.me/Fav_icon_green.png');
+    background-image: url('/favicon.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

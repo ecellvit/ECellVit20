@@ -11,7 +11,7 @@ import Activities from './Sections/Activities';
 function App() {
   return (
     <div className="App">
-      <Loader timeout="50000" />
+      <Loader timeout="1000" />
       <Landing />
       <About />
       <Activities />
