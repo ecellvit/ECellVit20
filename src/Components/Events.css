@@ -19,6 +19,15 @@
     object-fit: cover;
 }
 
+.events .eimg.fit {
+    object-fit: contain;
+}
+
+.event-container {
+    margin:auto; 
+    max-width: 1700px;
+}
+
 .events .ename {
     font-size: 1.2rem;
     margin-top: -4px;
@@ -86,6 +95,10 @@
 
 .events:hover .ename {
     color: #FFFFFF;
+}
+
+.events:hover .fit {
+    filter: invert(1);
 }
 
 @media (max-width: 768px) {
