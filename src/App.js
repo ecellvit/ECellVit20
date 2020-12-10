@@ -1,24 +1,19 @@
-import React from 'react';
-import './App.css';
-import Loader from './Components/Loader'
-import About from './Sections/About';
-import Landing from './Sections/Landing';
-import Footer from './Sections/Footer';
-import Gallery from './Sections/Gallery';
-import Team from './Sections/Team';
-import Activities from './Sections/Activities';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Main from "./pages/main";
+import Recruitments from "./pages/recruitments";
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
-    <div className="App">
-      <Loader timeout="1000" />
-      <Landing />
-      <About />
-      <Activities />
-      <Team />
-      <Gallery />
-      <Footer />
-    </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route exact path="/recruitments" component={Recruitments} />
+          <Route path="*" component={ErrorPage} />
+        </Switch>
+      </Router>
   );
 }
+
 export default App;
