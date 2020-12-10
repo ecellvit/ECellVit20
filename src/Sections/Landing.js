@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Nav from "../Components/Nav";
 import Social from "../Components/Social";
 import { Link } from "react-scroll";
-import './Landing.css';
 
 function Landing() {
     const [head, setHead] = useState('Entrepreneurship Cell');
@@ -20,6 +19,10 @@ function Landing() {
         }
         setHead(txt);
     });
+    var durationFn = function (deltaTop) {
+        const d = deltaTop < 0 ? -deltaTop / 2 : deltaTop / 2;
+        return d < 500 ? 500 : d;
+    };
     return (
         <div id="home">
             <div className="background"></div>
@@ -31,6 +34,11 @@ function Landing() {
                     <span className="iia">IDEATE. INNOVATE. ACTUATE.</span>
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
+                    <span className="down">
+                        <Link to="register" spy={true} smooth='easeInOutQuad' offset={0} duration={durationFn}>
+                            <button className="redirectbtn">Go to recruitments</button>
+                        </Link>
+                    </span>
                 </div>
                 <Link className="scrolldown" to="about" spy={true} smooth={true} offset={0} duration={800}>Scroll Down <i className="fa fa-angle-right"></i></Link>
             </div>

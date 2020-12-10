@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './DarkBg.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

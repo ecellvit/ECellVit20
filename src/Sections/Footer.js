@@ -1,5 +1,4 @@
 import React from "react";
-import './Footer.css';
 import Social from '../Components/Social';
 
 function Footer() {

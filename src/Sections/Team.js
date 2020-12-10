@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import DarkBg from '../Components/DarkBg';
-import './Team.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
-import './Nav.css';
 
 function Nav() {
     const [scrolled, setScroll] = useState('');
