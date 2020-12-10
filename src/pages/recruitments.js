@@ -1,6 +1,6 @@
 import React from 'react';
 import DarkBg from '../Components/DarkBg';
-import UserForm from '../Components/form';
+import UserForm from '../Components/formDialog';
 
 function Recruitments() {
     // const form=(

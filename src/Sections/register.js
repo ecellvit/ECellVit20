@@ -3,7 +3,7 @@ import Dialog from '@material-ui/core/Dialog';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import DarkBg from '../Components/DarkBg';
-import UserForm from '../Components/form';
+import UserForm from '../Components/formDialog';
 
 function Register() {
 

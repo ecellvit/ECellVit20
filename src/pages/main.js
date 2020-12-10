@@ -1,5 +1,4 @@
 import React from 'react';
-import './main.css';
 import Loader from '../Components/Loader';
 import About from '../Sections/About';
 import Landing from '../Sections/Landing';

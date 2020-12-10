@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Nav from "../Components/Nav";
 import Social from "../Components/Social";
 import { Link } from "react-scroll";
-import './Landing.css';
 
 function Landing() {
     const [head, setHead] = useState('Entrepreneurship Cell');
