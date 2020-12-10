@@ -35,7 +35,6 @@ function Landing() {
                     <span className="iia">IDEATE. INNOVATE. ACTUATE.</span>
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
-                    <br></br>
                     <span className="down">
                         <Link to="register" spy={true} smooth='easeInOutQuad' offset={0} duration={durationFn}>
                             <button className="redirectbtn">Go to recruitments</button>

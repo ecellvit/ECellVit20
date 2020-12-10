@@ -1,19 +1,27 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Main from "./pages/main";
-import Recruitments from "./pages/recruitments";
-import ErrorPage from './pages/ErrorPage';
+import React from 'react';
+import Loader from './Components/Loader';
+import About from './Sections/About';
+import Landing from './Sections/Landing';
+import Footer from './Sections/Footer';
+import Gallery from './Sections/Gallery';
+import Team from './Sections/Team';
+import Activities from './Sections/Activities';
+import Register from './Sections/register';
 
-function App() {
+
+function Main() {
   return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Main} />
-          <Route exact path="/recruitments" component={Recruitments} />
-          <Route path="*" component={ErrorPage} />
-        </Switch>
-      </Router>
+    <div className="App">
+      <Loader timeout="1000" />
+      <Landing />
+      <About />
+      <Activities />
+      <Team />
+      <Gallery />
+      <Register/>
+      <Footer />
+    </div>
   );
 }
 
-export default App;
+export default Main;

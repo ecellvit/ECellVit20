@@ -1,9 +1,0 @@
-a {
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
-}
-
-html {
-  transition: all 0.2s ease-in;
-}
