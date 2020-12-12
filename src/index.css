@@ -47,7 +47,8 @@ html {
 @media screen and (min-width: 600px) {
 
   .dialogue{
-    min-width: 600px;
+    min-width: 535px;
+
   }
 
 }
@@ -1271,3 +1272,4 @@ loading
       font-size: 1.2rem;
   }
 }
+

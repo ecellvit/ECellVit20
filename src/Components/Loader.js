@@ -14,16 +14,16 @@ function Loader(props) {
     return (
         <div className={`loading-screen ${cls}`}>
             <div id="loading-center">
-				<div class="loader">
-					<div class="cube">
-						<div class="sides">
-							<div class="loader-logo"></div>
-							<div class="top-side"></div>
-							<div class="right"></div>
-							<div class="bottom-side"></div>
-							<div class="left"></div>
-							<div class="front"></div>
-							<div class="back"></div>
+				<div className="loader">
+					<div className="cube">
+						<div className="sides">
+							<div className="loader-logo"></div>
+							<div className="top-side"></div>
+							<div className="right"></div>
+							<div className="bottom-side"></div>
+							<div className="left"></div>
+							<div className="front"></div>
+							<div className="back"></div>
 						</div>
 					</div>
 				</div>

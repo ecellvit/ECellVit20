@@ -7,41 +7,22 @@ export class FormS2 extends Component {
     return (
       <>
         <TextField
-          placeholder="Enter Your First Name"
-          label="First Name"
-          onChange={handleChange('firstName')}
-          defaultValue={values.firstName}
+          placeholder="Enter your phone Number"
+          label="Phone Number"
+          onChange={handleChange('phone')}
+          defaultValue={values.phone}
           margin="normal"
           fullWidth
         />
         <br />
         <TextField
-          placeholder="Enter Your Registration Number"
-          label="RegNo"
-          onChange={handleChange('regNo')}
-          defaultValue={values.regNo}
+          placeholder="Enter your WhatsApp Number"
+          label="WhatsApp Number"
+          onChange={handleChange('whatsapp')}
+          defaultValue={values.whatsapp}
           margin="normal"
           fullWidth
         />
-        <br />
-        <TextField
-          placeholder="Enter Your Last Name"
-          label="Last Name"
-          onChange={handleChange('lastName')}
-          defaultValue={values.lastName}
-          margin="normal"
-          fullWidth
-        />
-        <br />
-        <TextField
-          placeholder="Enter Your VIT Email-ID"
-          label="VIT Email"
-          onChange={handleChange('email')}
-          defaultValue={values.email}
-          margin="normal"
-          fullWidth
-        />
-        <br />
       </>
     );
   }
