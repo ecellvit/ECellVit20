@@ -7,19 +7,19 @@ export class FormS1 extends Component {
         return (
             <>
                 <TextField
-                    placeholder="Enter Your Registration Number"
-                    label="RegNo"
-                    onChange={handleChange('regNo')}
-                    defaultValue={values.regNo}
+                    placeholder="Enter Your Name"
+                    label="Name"
+                    onChange={handleChange('name')}
+                    defaultValue={values.name}
                     margin="normal"
                     fullWidth
                 />
                 <br />
                 <TextField
-                    placeholder="Enter Your Name"
-                    label="Name"
-                    onChange={handleChange('name')}
-                    defaultValue={values.name}
+                    placeholder="Enter Your Registration Number"
+                    label="RegNo"
+                    onChange={handleChange('regNo')}
+                    defaultValue={values.regNo}
                     margin="normal"
                     fullWidth
                 />

@@ -9,7 +9,7 @@ function Register() {
 
     const [open, setOpen] = React.useState(false);
     const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const fullScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -23,12 +23,12 @@ function Register() {
     const about = "We at ECell-VIT are looking for students with the best entrepreneurial mindset. The question is-  Have you got it?";
     const button =
         (
-            <div>
+            <>
                 {about}
                 <button className="redirectbtn" onClick={handleClickOpen}>
                     Open responsive dialog
                 </button>
-            </div>
+            </>
         );
 
     return (

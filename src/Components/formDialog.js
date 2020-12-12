@@ -6,31 +6,77 @@ import FormS4 from './Rform/FormS4';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
+
 
 export class UserForm extends Component {
     state = {
         step: 1,
-        name:'',
+        name: '',
         email: '',
-        gender:'',
-        preferredTimeSlot:'',
+        gender: '',
+        preferredTime: '',
         regNo: '',
-        department:''
+        dept: '',
+        whatsapp: '',
+        phone: '',
+        dis: false,
     };
-    
+
+    url = 'https://script.google.com/macros/s/AKfycbzSrlRIGOLVatQ9nxW9q06znXqtX4FCnXcefgqUVvUTU1TC647o/exec'
+
+
+
     closeForm = this.props.closeForm;
 
     // Proceed to next step
-    nextStep = () => {
-        const { step } = this.state;
-        if (step===3){
+    nextStep = async () => {
+        const { step, dis } = this.state;
+        if (step === 3 && dis === false) {
+            this.setState({
+                dis: true,
+            });
+
+            const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone } = this.state;
+
+            const item = { name, email, gender, preferredTime, regNo, dept, whatsapp, phone }
             // Fetch request here 
-            console.log(this.state)
+            var form_data = new FormData();
+
+            for (var key in item) {
+                console.log(key, item[key])
+                form_data.append(key, item[key]);
+            }
+
+            console.log(form_data.values())
+
+
+            try {
+                await axios.post(this.url, form_data)
+                    .then((res) => {
+                        console.log(res);
+                        this.setState({
+                            dis: false
+                            , step: step + 1
+                        })
+
+
+                    });
+            } catch (error) {
+                console.log(error);
+            }
         }
-        this.setState({
-            step: step + 1
-        });
+        else {
+            this.setState({
+                step: step + 1
+            });
+        }
+
+
+
     };
+
+
 
     // Go back to prev step
     prevStep = () => {
@@ -102,7 +148,7 @@ export class UserForm extends Component {
                             <Button onClick={this.prevStep} color="primary" autoFocus>
                                 Go Back
                             </Button>
-                            <Button onClick={this.nextStep} color="primary" autoFocus>
+                            <Button onClick={this.nextStep} color="primary" autoFocus disabled={this.dis}>
                                 Submit
                             </Button>
                         </DialogActions>
@@ -126,10 +172,10 @@ export class UserForm extends Component {
 
                 );
 
-                default:
-                    return (
-                      <></>
-                    )
+            default:
+                return (
+                    <></>
+                )
         }
     }
 }
