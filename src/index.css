@@ -176,7 +176,7 @@ html {
 
 .background {
   background-color: #000000;
-  background-image: url('/assets/final_cover.jpg');
+  background-image: url('./final_cover.jpg');
   filter: blur(2px);
   -webkit-filter: blur(2px);
   background-size: cover;
@@ -1018,7 +1018,7 @@ loading
 .loader>.cube>.sides>.loader-logo {
   background-color: transparent;
   border: none;
-  background-image: url('/favicon.png');
+  background-image: url('./favicon.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1273,3 +1273,6 @@ loading
   }
 }
 
+.MuiDialog-paperFullScreen .MuiDialogContent-root {
+  height: calc(100vh - 139px) !important;
+}

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import FormS1 from './Rform/FormS1';
 import FormS2 from './Rform/FormS2';
 import FormS3 from './Rform/FormS3';
-import FormS4 from './Rform/FormS4';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Button from '@material-ui/core/Button';
@@ -20,14 +19,11 @@ export class UserForm extends Component {
         dept: '',
         whatsapp: '',
         phone: '',
+        skillset: '',
         dis: false,
     };
 
     url = 'https://script.google.com/macros/s/AKfycbzSrlRIGOLVatQ9nxW9q06znXqtX4FCnXcefgqUVvUTU1TC647o/exec'
-
-
-
-    closeForm = this.props.closeForm;
 
     // Proceed to next step
     nextStep = async () => {
@@ -37,9 +33,9 @@ export class UserForm extends Component {
                 dis: true,
             });
 
-            const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone } = this.state;
+            const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset } = this.state;
 
-            const item = { name, email, gender, preferredTime, regNo, dept, whatsapp, phone }
+            const item = { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset }
             // Fetch request here 
             var form_data = new FormData();
 
@@ -50,17 +46,12 @@ export class UserForm extends Component {
 
             console.log(form_data.values())
 
-
             try {
                 await axios.post(this.url, form_data)
                     .then((res) => {
                         console.log(res);
-                        this.setState({
-                            dis: false
-                            , step: step + 1
-                        })
-
-
+                        this.props.snackHandle();
+                        this.props.closeForm();
                     });
             } catch (error) {
                 console.log(error);
@@ -71,9 +62,6 @@ export class UserForm extends Component {
                 step: step + 1
             });
         }
-
-
-
     };
 
 
@@ -93,8 +81,8 @@ export class UserForm extends Component {
 
     render() {
         const { step } = this.state;
-        const { firstName, lastName, email, occupation, city, bio, regNo } = this.state;
-        const values = { firstName, lastName, email, occupation, city, bio, regNo };
+        const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset } = this.state;
+        const values = { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset };
 
         switch (step) {
             case 1:
@@ -154,24 +142,6 @@ export class UserForm extends Component {
                         </DialogActions>
                     </div>
                 );
-            case 4:
-                return (
-                    <div className="dialogue">
-                        <DialogContent>
-                            <FormS4
-                                handleChange={this.handleChange}
-                                values={values}
-                            />
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={this.closeForm} color="primary" autoFocus>
-                                Close
-                            </Button>
-                        </DialogActions>
-                    </div>
-
-                );
-
             default:
                 return (
                     <></>

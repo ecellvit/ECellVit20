@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
+import { FormControl, Select, MenuItem, InputLabel, TextField } from '@material-ui/core';
 import axios from 'axios';
 
 export default function FormS3(props) {
@@ -62,28 +59,45 @@ export default function FormS3(props) {
           <MenuItem value={'Design'}>Design</MenuItem>
         </Select>
       </FormControl>
-      <br></br>
-      <br></br>
-      <FormControl style={{
-        width: '100%',
-      }}>
-        <InputLabel id="preferredTime">Preferred Timeslot</InputLabel>
-        <Select
-          labelId="preferredTime"
-          id="preferredTime"
-          value={values.preferredTime}
+      {values.dept !== ''
+        ? <TextField
+          style={{ marginTop: 0, marginBottom: 4 }}
+          placeholder="Your Interest/Abilities"
+          label="Interest/Abilities"
+          onChange={handleChange('skillset')}
+          defaultValue={values.skillset}
+          margin="normal"
+          helperText={values.dept === 'Technical' ? "We are looking for App or Web Developers Only" : "We want someone who knows Photoshop/Illustrator and Premier Pro/Final Cut Pro"}
           fullWidth
-          onChange={handleChange('preferredTime')}
-        >
-          {data ?
-            data.data.map(Slot => (
-              <MenuItem value={Slot[0]}>{Slot[0]} {Slot[1]} </MenuItem>
-            ))
-            : <>
-            </>
-          }
-        </Select>
-      </FormControl>
+        />
+        :
+        <></>
+      }
+      <br></br>
+      <br></br>
+      {values.dept === 'Management'
+        ?
+        <FormControl style={{
+          width: '100%',
+        }}>
+          <InputLabel id="preferredTime">Preferred Timeslot</InputLabel>
+          <Select
+            labelId="preferredTime"
+            id="preferredTime"
+            value={values.preferredTime}
+            fullWidth
+            onChange={handleChange('preferredTime')}
+          >
+            {data
+              ? data.data.map(Slot => (
+                <MenuItem value={Slot[0]} disabled={Slot[1] === 0}>{Slot[0]} (Seats Left : {Slot[1]})</MenuItem>
+              ))
+              : <></>
+            }
+          </Select>
+        </FormControl>
+        : <></>
+      }
       <br></br>
       <br></br>
     </>
