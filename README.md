@@ -1,6 +1,6 @@
 # Entrepreneurship Cell - VIT
 
-![Website](https://img.shields.io/badge/Website-Live-Blueviolet?style=for-the-badge&logo=appveyor&color=blueviolet)
+[![Website](https://img.shields.io/badge/Website-Live-Blueviolet?style=for-the-badge&logo=appveyor&color=blueviolet)](https://ecellvit.com)
 
 The official portal of E-cell VIT.
 
