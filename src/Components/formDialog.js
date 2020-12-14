@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import FormS1 from './Rform/FormS1';
 import FormS2 from './Rform/FormS2';
 import FormS3 from './Rform/FormS3';
+import FormS4 from './Rform/FormS4';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import { Typography } from '@material-ui/core';
 
 
 export class UserForm extends Component {
@@ -26,15 +28,27 @@ export class UserForm extends Component {
 
     url = 'https://script.google.com/macros/s/AKfycbzSrlRIGOLVatQ9nxW9q06znXqtX4FCnXcefgqUVvUTU1TC647o/exec'
 
+    closeForm = this.props.closeForm
+
     // Proceed to next step
     nextStep = async () => {
         const { step, dis } = this.state;
-        if (step === 3 && dis === false) {
+        if (step === 4 && dis === false) {
             this.setState({
                 dis: true,
             });
 
             const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset, link } = this.state;
+
+            if (name==='' || email==='' || gender==='' || regNo===''|| dept===''|| whatsapp===''|| phone==='' || skillset===''){
+                this.props.snackHandle2() 
+                return; 
+            }
+            else if(dept==='Management' && preferredTime==='')
+            {
+                this.props.snackHandle2()
+                return;
+            }
 
             const item = { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset, link }
             // Fetch request here 
@@ -89,6 +103,11 @@ export class UserForm extends Component {
             case 1:
                 return (
                     <div className="dialogue">
+                        <Typography
+                            variant='subtitle1'
+                            align='center'
+                            children={`Step ${step} of 4`}
+                        />
                         <DialogContent>
                             <FormS1
                                 handleChange={this.handleChange}
@@ -108,6 +127,11 @@ export class UserForm extends Component {
             case 2:
                 return (
                     <div className="dialogue">
+                        <Typography
+                            variant='subtitle1'
+                            align='center'
+                            children={`Step ${step} of 4`}
+                        />
                         <DialogContent>
                             <FormS2
                                 handleChange={this.handleChange}
@@ -127,8 +151,38 @@ export class UserForm extends Component {
             case 3:
                 return (
                     <div className="dialogue">
+                        <Typography
+                            variant='subtitle1'
+                            align='center'
+                            children={`Step ${step} of 4`}
+                        />
                         <DialogContent>
                             <FormS3
+                                handleChange={this.handleChange}
+                                values={values}
+                            />
+                        </DialogContent>
+                        <DialogActions
+                        >
+                            <Button onClick={this.prevStep} color="primary" autoFocus>
+                                Go Back
+                            </Button>
+                            <Button onClick={this.nextStep} color="primary" autoFocus disabled={this.dis}>
+                                Continue
+                            </Button>
+                        </DialogActions>
+                    </div>
+                );
+            case 4:
+                return (
+                    <div className="dialogue">
+                        <Typography
+                            variant='subtitle1'
+                            align='center'
+                            children={`Step ${step} of 4`}
+                        />
+                        <DialogContent>
+                            <FormS4
                                 handleChange={this.handleChange}
                                 values={values}
                             />
@@ -136,10 +190,10 @@ export class UserForm extends Component {
                         <DialogActions>
                             <Button onClick={this.prevStep} color="primary" autoFocus>
                                 Go Back
-                            </Button>
+                                </Button>
                             <Button onClick={this.nextStep} color="primary" autoFocus disabled={this.dis}>
                                 Submit
-                            </Button>
+                                </Button>
                         </DialogActions>
                     </div>
                 );

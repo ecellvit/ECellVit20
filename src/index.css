@@ -60,6 +60,11 @@ html {
 	flex-wrap: wrap;
 }
 
+.typo{
+  margin:30px 0 5px 0 !important;
+
+}
+
 .one {
 	display: block;
 	width: 80%;
