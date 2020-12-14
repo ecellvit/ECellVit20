@@ -34,6 +34,7 @@ export default function FormS3(props) {
           style={{
             width: '100%'
           }}
+          required
           onChange={handleChange('gender')}
         >
           <MenuItem value={'Male'}>Male</MenuItem>
@@ -52,6 +53,7 @@ export default function FormS3(props) {
           id="dept"
           value={values.dept}
           fullWidth
+          required
           onChange={handleChange('dept')}
         >
           <MenuItem value={'Management'}>Management</MenuItem>
@@ -67,12 +69,24 @@ export default function FormS3(props) {
           onChange={handleChange('skillset')}
           defaultValue={values.skillset}
           margin="normal"
+          required
           helperText={values.dept === 'Technical' ? "We are looking for App or Web Developers Only" : "We want someone who knows Photoshop/Illustrator and Premier Pro/Final Cut Pro"}
           fullWidth
         />
         :
         <></>
       }
+      {values.dept === 'Design' ?
+        <TextField
+          style={{ marginTop: 0, marginBottom: 4 }}
+          placeholder="Add drive link"
+          label="Drive Link"
+          onChange={handleChange('link')}
+          defaultValue={values.link}
+          margin="normal"
+          helperText={"Add drive link of any designs you have made"}
+          fullWidth
+        /> : <></>}
       <br></br>
       <br></br>
       {values.dept === 'Management'
@@ -86,14 +100,12 @@ export default function FormS3(props) {
             id="preferredTime"
             value={values.preferredTime}
             fullWidth
+            required
             onChange={handleChange('preferredTime')}
           >
-            {data
-              ? data.data.map(Slot => (
-                <MenuItem value={Slot[0]} disabled={Slot[1] === 0}>{Slot[0]} (Seats Left : {Slot[1]})</MenuItem>
-              ))
-              : <></>
-            }
+            {data?.data.map(Slot => (
+              <MenuItem value={Slot[0]} disabled={Slot[1] === 0}>{Slot[0]} (Seats Left : {Slot[1]})</MenuItem>
+            ))}
           </Select>
         </FormControl>
         : <></>

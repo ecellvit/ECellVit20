@@ -21,6 +21,7 @@ export class UserForm extends Component {
         phone: '',
         skillset: '',
         dis: false,
+        link: ''
     };
 
     url = 'https://script.google.com/macros/s/AKfycbzSrlRIGOLVatQ9nxW9q06znXqtX4FCnXcefgqUVvUTU1TC647o/exec'
@@ -33,9 +34,9 @@ export class UserForm extends Component {
                 dis: true,
             });
 
-            const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset } = this.state;
+            const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset, link } = this.state;
 
-            const item = { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset }
+            const item = { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset, link }
             // Fetch request here 
             var form_data = new FormData();
 
@@ -81,8 +82,8 @@ export class UserForm extends Component {
 
     render() {
         const { step } = this.state;
-        const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset } = this.state;
-        const values = { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset };
+        const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset, link } = this.state;
+        const values = { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset, link };
 
         switch (step) {
             case 1:

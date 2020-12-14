@@ -13,6 +13,7 @@ export class FormS2 extends Component {
           defaultValue={values.phone}
           margin="normal"
           fullWidth
+          required
         />
         <br />
         <TextField
@@ -22,6 +23,7 @@ export class FormS2 extends Component {
           defaultValue={values.whatsapp}
           margin="normal"
           fullWidth
+          required
         />
       </>
     );

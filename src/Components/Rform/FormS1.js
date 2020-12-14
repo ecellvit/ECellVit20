@@ -13,6 +13,7 @@ export class FormS1 extends Component {
                     defaultValue={values.name}
                     margin="normal"
                     fullWidth
+                    required
                 />
                 <br />
                 <TextField
@@ -22,6 +23,7 @@ export class FormS1 extends Component {
                     defaultValue={values.regNo}
                     margin="normal"
                     fullWidth
+                    required
                 />
                 <br />
                 <TextField
@@ -31,6 +33,7 @@ export class FormS1 extends Component {
                     defaultValue={values.email}
                     margin="normal"
                     fullWidth
+                    required
                 />
                 <br />
             </>
