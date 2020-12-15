@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FormControl, Select, MenuItem, InputLabel, TextField, Typography } from '@material-ui/core';
+import { FormControl, Select, MenuItem, InputLabel, TextField, Typography, FormHelperText } from '@material-ui/core';
 import axios from 'axios';
 
 export default function FormS4(props) {
@@ -18,8 +18,9 @@ export default function FormS4(props) {
                 console.log(error);
             }
         }
-        getData()
-    }, []);
+        if (values.dept === "Management")
+            getData()
+    }, [values]);
     return (
         <>
             {values.dept === 'Technical'
@@ -36,6 +37,8 @@ export default function FormS4(props) {
                         style={{ marginTop: 0, marginBottom: 4 }}
                         placeholder="Your Interests/Abilities"
                         label="Interests/Abilities"
+                        error={values.errors.skillset}
+                        helperText={values.errors.skillset && "This field is required.. feel free to write about yourselt"}
                         onChange={handleChange('skillset')}
                         defaultValue={values.skillset}
                         required
@@ -81,6 +84,8 @@ export default function FormS4(props) {
                         style={{ marginTop: 0, marginBottom: 4 }}
                         placeholder="Your Interests/Abilities"
                         label="Interests/Abilities"
+                        error={values.errors.skillset}
+                        helperText={values.errors.skillset && "This field is required.. feel free to write about yourselt"}
                         onChange={handleChange('skillset')}
                         defaultValue={values.skillset}
                         required
@@ -125,15 +130,18 @@ export default function FormS4(props) {
                     <TextField
                         style={{ marginTop: 0, marginBottom: 4 }}
                         placeholder="Your Management Related Skills"
+                        error={values.errors.skillset}
+                        helperText={values.errors.skillset && "This field is required.. feel free to write about yourselt"}
                         label="Skills"
                         onChange={handleChange('skillset')}
                         defaultValue={values.skillset}
                         required
                         fullWidth
                     />
-                    <FormControl style={{
-                        width: '100%',
-                    }}>
+                    <FormControl
+                        style={{ width: '100%' }}
+                        error={values.errors.preferredTime}
+                    >
                         <InputLabel id="preferredTime">Preferred Timeslot *</InputLabel>
                         <Select
                             labelId="preferredTime"
@@ -147,13 +155,14 @@ export default function FormS4(props) {
                                 <MenuItem value={Slot[0]} disabled={Slot[1] === 0}>{Slot[0]} (Seats Left : {Slot[1]})</MenuItem>
                             ))}
                         </Select>
+                        <FormHelperText>{values.errors.preferredTime && "Please select a slot.. if there are no available slots.. contact number given below"}</FormHelperText>
                     </FormControl>
                     <br />
                     <br />
                     <Typography
                         variant="body2"
                         children={
-                            <span>You are free to share any additional skills that you may have such as <strong>editorial skills</strong> or <strong>content writing</strong>.</span>
+                            <span>You are free to share any additional skills that you may have such as <strong>editorial skills</strong> or <strong>Photography</strong>.</span>
                         }
                     />
                 </> : <></>

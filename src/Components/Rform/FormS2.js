@@ -9,6 +9,8 @@ export class FormS2 extends Component {
         <TextField
           placeholder="Enter your phone Number"
           label="Phone Number"
+          error={values.errors.phone}
+          helperText={values.errors.phone && "Please enter a valid phone number"}
           onChange={handleChange('phone')}
           defaultValue={values.phone}
           margin="normal"
@@ -19,6 +21,8 @@ export class FormS2 extends Component {
         <TextField
           placeholder="Enter your WhatsApp Number"
           label="WhatsApp Number"
+          error={values.errors.whatsapp}
+          helperText={values.errors.whatsapp && "Please enter a valid phone number"}
           onChange={handleChange('whatsapp')}
           defaultValue={values.whatsapp}
           margin="normal"
@@ -30,4 +34,4 @@ export class FormS2 extends Component {
   }
 }
 
-  export default FormS2;
+export default FormS2;

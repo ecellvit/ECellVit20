@@ -11,6 +11,7 @@ function Register() {
     const [open, setOpen] = React.useState(false);
     const [snackopen, setSnackOpen] = React.useState(false);
     const [snackopen2, setSnackOpen2] = React.useState(false);
+    const [snackopen3, setSnackOpen3] = React.useState(false);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
@@ -37,6 +38,13 @@ function Register() {
         setSnackOpen2(false)
     }
 
+    const handleSnack3 = () => {
+        setSnackOpen3(true);
+    }
+    const handleSnack3Close = () => {
+        setSnackOpen3(false)
+    }
+
     const about = "We at ECell-VIT are looking for students with the best entrepreneurial mindset. The question is-  Have you got it?";
     const button =
         (
@@ -57,9 +65,6 @@ function Register() {
                 maxWidth='sm'
                 fullWidth={true}
                 onClose={handleClose}
-                // PaperProps={{
-                //     style:{background: "url('/assets/Logos/future.png')"}
-                // }}
                 aria-labelledby="responsive-dialog-title">
                 <Typography
                     variant='h5'
@@ -67,7 +72,11 @@ function Register() {
                     className='typo'
                     children='Recruitment Form'
                 />
-                <UserForm closeForm={handleClose} snackHandle={handleSnack} snackHandle2={handleSnack2}/>
+                <UserForm closeForm={handleClose}
+                    snackHandleSuccess={handleSnack}
+                    snackHandleError={handleSnack2}
+                    snackHandleAlreadyExist={handleSnack3}
+                />
             </Dialog>
             <Snackbar open={snackopen} autoHideDuration={6000} onClose={handleSnackClose} >
                 <Alert severity="success" onClose={handleSnackClose}>
@@ -77,7 +86,12 @@ function Register() {
             </Snackbar>
             <Snackbar open={snackopen2} autoHideDuration={6000} onClose={handleSnack2Close} >
                 <Alert severity="error" onClose={handleSnack2Close}>
-                    Some or all fields are empty! Please fill all the required fields.
+                    There was some error connecting. Retry submitting
+                </Alert>
+            </Snackbar>
+            <Snackbar open={snackopen3} autoHideDuration={6000} onClose={handleSnack3Close} >
+                <Alert severity="error" onClose={handleSnack2Close}>
+                    You have already registered for this department
                 </Alert>
             </Snackbar>
         </span>
