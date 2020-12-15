@@ -19,10 +19,7 @@ function Landing() {
         }
         setHead(txt);
     });
-    var durationFn = function (deltaTop) {
-        const d = deltaTop < 0 ? -deltaTop / 2 : deltaTop / 2;
-        return d < 500 ? 500 : d;
-    };
+
     return (
         <div id="home">
             <div className="background"></div>
@@ -35,7 +32,7 @@ function Landing() {
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
                     <span className="down">
-                        <Link to="register" spy={true} smooth='easeInOutQuad' offset={0} duration={durationFn}>
+                        <Link to="register" spy={true} smooth='easeInOutQuad' offset={0} duration={2000}>
                             <button className="redirectbtn">Go to recruitments</button>
                         </Link>
                     </span>

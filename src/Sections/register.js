@@ -57,6 +57,9 @@ function Register() {
                 maxWidth='sm'
                 fullWidth={true}
                 onClose={handleClose}
+                // PaperProps={{
+                //     style:{background: "url('/assets/Logos/future.png')"}
+                // }}
                 aria-labelledby="responsive-dialog-title">
                 <Typography
                     variant='h5'

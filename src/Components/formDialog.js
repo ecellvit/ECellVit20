@@ -42,11 +42,17 @@ export class UserForm extends Component {
 
             if (name==='' || email==='' || gender==='' || regNo===''|| dept===''|| whatsapp===''|| phone==='' || skillset===''){
                 this.props.snackHandle2() 
+                this.setState({
+                    dis: false
+                })
                 return; 
             }
             else if(dept==='Management' && preferredTime==='')
             {
                 this.props.snackHandle2()
+                this.setState({
+                    dis: false
+                })
                 return;
             }
 

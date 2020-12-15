@@ -158,8 +158,18 @@ export default function FormS4(props) {
                     />
                 </> : <></>
             }
-            <br></br>
-            <br></br>
+            {values.dept === ''
+                ?
+                <>
+                    <Typography
+                        variant="h6"
+                        align="center"
+                        children={
+                            <strong>Please Choose your preferred department in Step 3</strong>
+                        }
+                    />
+                </> : <></>
+            }
         </>
     );
 
