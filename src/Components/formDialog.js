@@ -3,11 +3,11 @@ import FormS1 from './Rform/FormS1';
 import FormS2 from './Rform/FormS2';
 import FormS3 from './Rform/FormS3';
 import FormS4 from './Rform/FormS4';
+import FormS5 from './Rform/FormS5';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Button from '@material-ui/core/Button';
-import axios from 'axios';
-import { CircularProgress, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 
 export class UserForm extends Component {
@@ -22,7 +22,6 @@ export class UserForm extends Component {
         whatsapp: '',
         phone: '',
         skillset: '',
-        isLoading: false,
         link: '',
         errors: {
             name: false,
@@ -42,44 +41,6 @@ export class UserForm extends Component {
 
     closeForm = this.props.closeForm
 
-    submit = async () => {
-        const { name, email, gender, preferredTime, regNo, dept, whatsapp, phone, skillset, link, isLoading } = this.state;
-
-        const item = { name, email, gender, preferredTime, regNo: regNo.toUpperCase(), dept, whatsapp, phone, skillset, link }
-
-        if (!isLoading) {
-            this.setState({ isLoading: true })
-            // Fetch request here 
-            var form_data = new FormData();
-
-            for (var key in item) {
-                form_data.append(key, item[key]);
-            }
-
-            console.log(form_data.values())
-
-            try {
-                await axios.post(this.url, form_data)
-                    .then((res) => {
-                        console.log(res);
-                        if (res.data.result === 'success') {
-                            this.props.snackHandleSuccess();
-                            this.props.closeForm();
-                        } else if (res.data.result === 'fail') {
-                            this.setState({ isLoading: false })
-                            this.props.snackHandleAlreadyExist()
-                        } else {
-                            this.setState({ isLoading: false })
-                            this.props.snackHandleError()
-                        }
-                    });
-            } catch (error) {
-                console.log(error);
-                this.setState({ isLoading: false })
-            }
-        }
-    }
-
     // Proceed to next step
     nextStep = () => {
         const { step } = this.state;
@@ -96,12 +57,10 @@ export class UserForm extends Component {
         else if (step === 4) {
             const { skillset, preferredTime, dept } = this.state;
             if (dept === 'Management') {
-                if (!this.checkValidation2({ 'skillset': skillset, 'preferredTime': preferredTime })) this.submit();
-            } else if (!this.checkValidation2({ 'skillset': skillset })) this.submit();
+                if (!this.checkValidation2({ 'skillset': skillset, 'preferredTime': preferredTime })) this.setState({ step: 5 })
+            } else if (!this.checkValidation2({ 'skillset': skillset })) this.setState({ step: 5 })
         }
     };
-
-
 
     // Go back to prev step
     prevStep = () => {
@@ -223,6 +182,15 @@ export class UserForm extends Component {
                         values={values}
                     />
                 );
+            case 5:
+                return (
+                    <FormS5
+                        values={values}
+                        closeForm={this.props.closeForm}
+                        snackSuccess={this.props.snackHandleSuccess}
+                        snackError={this.props.snackHandleError}
+                    />
+                )
             default:
                 return (
                     <></>
@@ -231,7 +199,7 @@ export class UserForm extends Component {
     }
 
     formActions = () => {
-        const { step, isLoading } = this.state;
+        const { step } = this.state;
 
         switch (step) {
             case 1:
@@ -246,35 +214,23 @@ export class UserForm extends Component {
                     </DialogActions>
                 );
             case 2:
-                return (
-                    <DialogActions>
-                        <Button onClick={this.prevStep} color="primary" autoFocus>
-                            Go Back
-                        </Button>
-                        <Button onClick={this.nextStep} color="primary" autoFocus>
-                            Continue
-                        </Button>
-                    </DialogActions>
-                );
             case 3:
-                return (
-                    <DialogActions>
-                        <Button onClick={this.prevStep} color="primary" autoFocus>
-                            Go Back
-                        </Button>
-                        <Button onClick={this.nextStep} color="primary" autoFocus>
-                            Continue
-                        </Button>
-                    </DialogActions>
-                );
             case 4:
                 return (
                     <DialogActions>
                         <Button onClick={this.prevStep} color="primary" autoFocus>
                             Go Back
                         </Button>
-                        <Button onClick={this.nextStep} color="primary" disabled={isLoading} autoFocus>
-                            {isLoading ? <CircularProgress size={18} style={{ marginRight: 8 }} /> : <></>} Submit
+                        <Button onClick={this.nextStep} color="primary" autoFocus>
+                            Continue
+                        </Button>
+                    </DialogActions>
+                );
+            case 5:
+                return (
+                    <DialogActions>
+                        <Button onClick={this.prevStep} color="primary" autoFocus>
+                            Go Back
                         </Button>
                     </DialogActions>
                 );
@@ -296,22 +252,24 @@ export class UserForm extends Component {
                 <Typography
                     variant='subtitle1'
                     align='center'
-                    children={`Step ${step} of 4`}
+                    children={`Step ${step} of 5`}
                 />
                 <DialogContent>
                     <this.formStep />
                 </DialogContent>
-                <Typography
-                    variant="body1"
-                    style={{ padding: '30px 20px 0 20px' }}
-                    className="form-footer"
-                    children={
-                        <span>If you feel any difficulty in filling form.. feel free to contact&nbsp;
-                                <a style={{ display: 'inline' }} href="tel:+919873734018">Vinayak(9873734018)</a> &amp;&nbsp;
-                                <a style={{ display: 'inline' }} href="tel:+918290469207">Vinamra(8290469207)</a>
-                        </span>
-                    }
-                />
+                <div style={{ padding: '30px 20px 0 20px' }} >
+                    <Typography
+                        variant="caption"
+
+                        className="form-footer"
+                        children={
+                            <span>If you find any difficulty filling the form, feel free to contact &nbsp;
+                                <a style={{ display: 'inline' }} href="tel:+919873734018">Vinayak (9873734018)</a> &amp; &nbsp;
+                                <a style={{ display: 'inline' }} href="tel:+918290469207">Vinamra (8290469207)</a>
+                            </span>
+                        }
+                    />
+                </div>
                 <this.formActions />
             </div>
         )

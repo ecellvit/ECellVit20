@@ -21,7 +21,7 @@ export class FormS1 extends Component {
                 <TextField
                     placeholder="Enter Your Registration Number"
                     error={values.errors.regNo}
-                    helperText={values.errors.regNo && "Enter a valid Registration number like 20BXX0000"}
+                    helperText={values.errors.regNo && "Enter a valid Registration number like 00XXX0000"}
                     label="RegNo"
                     onChange={handleChange('regNo')}
                     defaultValue={values.regNo}

@@ -7,19 +7,24 @@ import Gallery from './Sections/Gallery';
 import Team from './Sections/Team';
 import Activities from './Sections/Activities';
 import Register from './Sections/register';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 
 function Main() {
   return (
     <div className="App">
-      <Loader timeout="1000" />
-      <Landing />
-      <About />
-      <Activities />
-      <Team />
-      <Gallery />
-      <Register/>
-      <Footer />
+      <GoogleReCaptchaProvider
+        reCaptchaKey="6LdXGwkaAAAAAHDub2OA24Hw42mA-7oKQIzstrRV"
+      >
+        <Loader timeout="1000" />
+        <Landing />
+        <About />
+        <Activities />
+        <Team />
+        <Gallery />
+        <Register />
+        <Footer />
+      </GoogleReCaptchaProvider>
     </div>
   );
 }

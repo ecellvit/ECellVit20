@@ -55,7 +55,7 @@ export default function FormS3(props) {
       <Typography
         variant="body2"
         children={
-          <span>If you wish to apply for multiple domains.. fill form multiple times</span>
+          <span>If you wish to apply for any other domain, please fill the form again</span>
         }
       />
     </>

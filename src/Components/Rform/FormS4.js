@@ -5,14 +5,13 @@ import axios from 'axios';
 export default function FormS4(props) {
     const { values, handleChange } = props;
     const [data, setData] = useState();
-    const url = 'https://script.google.com/macros/s/AKfycbzSrlRIGOLVatQ9nxW9q06znXqtX4FCnXcefgqUVvUTU1TC647o/exec'
     useEffect(() => {
         const getData = async () => {
             try {
-                await axios.get(url)
+                await axios.get('https://infinite-fortress-17779.herokuapp.com/allslots')
                     .then((res) => {
-                        console.log(res);
-                        setData(res.data)
+                        console.log(res.data.allslots);
+                        setData(res.data.allslots)
                     });
             } catch (error) {
                 console.log(error);
@@ -38,7 +37,7 @@ export default function FormS4(props) {
                         placeholder="Your Interests/Abilities"
                         label="Interests/Abilities"
                         error={values.errors.skillset}
-                        helperText={values.errors.skillset && "This field is required.. feel free to write about yourselt"}
+                        helperText={values.errors.skillset && "Mention any skills you possess"}
                         onChange={handleChange('skillset')}
                         defaultValue={values.skillset}
                         required
@@ -85,7 +84,7 @@ export default function FormS4(props) {
                         placeholder="Your Interests/Abilities"
                         label="Interests/Abilities"
                         error={values.errors.skillset}
-                        helperText={values.errors.skillset && "This field is required.. feel free to write about yourselt"}
+                        helperText={values.errors.skillset && "Mention any skills you possess"}
                         onChange={handleChange('skillset')}
                         defaultValue={values.skillset}
                         required
@@ -131,7 +130,7 @@ export default function FormS4(props) {
                         style={{ marginTop: 0, marginBottom: 4 }}
                         placeholder="Your Management Related Skills"
                         error={values.errors.skillset}
-                        helperText={values.errors.skillset && "This field is required.. feel free to write about yourselt"}
+                        helperText={values.errors.skillset && "Mention any skills you possess"}
                         label="Skills"
                         onChange={handleChange('skillset')}
                         defaultValue={values.skillset}
@@ -151,11 +150,11 @@ export default function FormS4(props) {
                             required
                             onChange={handleChange('preferredTime')}
                         >
-                            {data?.data.map(Slot => (
-                                <MenuItem value={Slot[0]} disabled={Slot[1] === 0}>{Slot[0]} (Seats Left : {Slot[1]})</MenuItem>
-                            ))}
+                            {data ? data.map(Slot => {
+                                return <MenuItem value={Slot.slot} disabled={Slot.seats === 0}>{Slot.slot} (Seats Left : {Slot.seats})</MenuItem>
+                            }) : <></>}
                         </Select>
-                        <FormHelperText>{values.errors.preferredTime && "Please select a slot.. if there are no available slots.. contact number given below"}</FormHelperText>
+                        <FormHelperText>{values.errors.preferredTime && "Please select any available slot. Incase of any discrepancies, contact the number given below"}</FormHelperText>
                     </FormControl>
                     <br />
                     <br />
