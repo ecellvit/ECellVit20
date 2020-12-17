@@ -17,6 +17,7 @@ export default function FormS4(props) {
 
         getRecaptcha().then(async (token) => {
             console.log(token);
+            if(dept !== 'Management') preferredTime = "";
             const item = { name, email, gender, slot: preferredTime, regNo: regNo.toUpperCase(), dept, whatsapp, phone, skillset, link, captcha: token }
 
             try {
