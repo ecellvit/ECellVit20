@@ -17,8 +17,10 @@ export default function FormS4(props) {
 
         getRecaptcha().then(async (token) => {
             console.log(token);
-            if(dept !== 'Management') preferredTime = "";
-            const item = { name, email, gender, slot: preferredTime, regNo: regNo.toUpperCase(), dept, whatsapp, phone, skillset, link, captcha: token }
+            var slot;
+            if(dept !== 'Management') slot = "";
+            else slot = preferredTime;
+            const item = { name, email, gender, slot: slot, regNo: regNo.toUpperCase(), dept, whatsapp, phone, skillset, link, captcha: token }
 
             try {
                 await axios.post('https://infinite-fortress-17779.herokuapp.com/register', item)
