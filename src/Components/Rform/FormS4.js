@@ -161,6 +161,13 @@ export default function FormS4(props) {
                     <Typography
                         variant="body2"
                         children={
+                            <span>The following timings are for <strong>ROUND 1</strong> only, timings for subsequent rounds will be <strong>informed later</strong>.</span>
+                        }
+                    />
+                    <br /><br />
+                    <Typography
+                        variant="body2"
+                        children={
                             <span>You are free to share any additional skills that you may have such as <strong>editorial skills</strong> or <strong>Photography</strong>.</span>
                         }
                     />
