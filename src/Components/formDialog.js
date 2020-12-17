@@ -71,18 +71,17 @@ export class UserForm extends Component {
     };
 
     validateEmail(email) {
-        // const re = /([a-zA-Z0-9]+)([.{1}])?([a-zA-Z0-9]+)@vitstudent([.])ac([.])in/g; //VIT EMAIL
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
 
     validateRegNo(reg) {
-        const re = /([0-9]{2})([a-zA-Z]{3})([0-9]{4})/g;
+        const re = /([0-9]{2})([a-zA-Z]{3})([0-9]{4})$/g;
         return re.test(reg);
     }
 
     validatePhone(ph) {
-        const re = /([0-9]{10})/g
+        const re = /^([0-9]{10})$/g
         return re.test(ph)
     }
 
@@ -145,7 +144,6 @@ export class UserForm extends Component {
 
     // Handle fields change
     handleChange = input => e => {
-        // this.setState({ [input]: e.target.value });
         this.checkValidation2({ [input]: e.target.value });
     };
 
