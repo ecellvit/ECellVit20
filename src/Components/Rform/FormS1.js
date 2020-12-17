@@ -12,7 +12,7 @@ export class FormS1 extends Component {
                     error={values.errors.name}
                     helperText={values.errors.name && "This field cannot be empty"}
                     onChange={handleChange('name')}
-                    defaultValue={values.name}
+                    value={values.name}
                     margin="normal"
                     fullWidth
                     required
@@ -24,7 +24,7 @@ export class FormS1 extends Component {
                     helperText={values.errors.regNo && "Enter a valid Registration number like 00XXX0000"}
                     label="RegNo"
                     onChange={handleChange('regNo')}
-                    defaultValue={values.regNo}
+                    value={values.regNo}
                     margin="normal"
                     fullWidth
                     required
@@ -36,7 +36,7 @@ export class FormS1 extends Component {
                     helperText={values.errors.email && "Enter a valid vit student mail like name2020@vitstudent.ac.in"}
                     label="VIT Email"
                     onChange={handleChange('email')}
-                    defaultValue={values.email}
+                    value={values.email}
                     margin="normal"
                     fullWidth
                     required

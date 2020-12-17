@@ -39,7 +39,7 @@ export default function FormS4(props) {
                         error={values.errors.skillset}
                         helperText={values.errors.skillset && "Mention any skills you possess"}
                         onChange={handleChange('skillset')}
-                        defaultValue={values.skillset}
+                        value={values.skillset}
                         required
                         fullWidth
                     />
@@ -49,7 +49,7 @@ export default function FormS4(props) {
                         placeholder="Your Github Link"
                         label="Github Link"
                         onChange={handleChange('link')}
-                        defaultValue={values.link}
+                        value={values.link}
                         fullWidth
                         helperText="optional"
                     />
@@ -86,7 +86,7 @@ export default function FormS4(props) {
                         error={values.errors.skillset}
                         helperText={values.errors.skillset && "Mention any skills you possess"}
                         onChange={handleChange('skillset')}
-                        defaultValue={values.skillset}
+                        value={values.skillset}
                         required
                         fullWidth
                     />
@@ -97,7 +97,7 @@ export default function FormS4(props) {
                         label="Drive Link"
                         onChange={handleChange('link')}
                         helperText="optional"
-                        defaultValue={values.link}
+                        value={values.link}
                         fullWidth
                     />
                     <br />
@@ -133,7 +133,7 @@ export default function FormS4(props) {
                         helperText={values.errors.skillset && "Mention any skills you possess"}
                         label="Skills"
                         onChange={handleChange('skillset')}
-                        defaultValue={values.skillset}
+                        value={values.skillset}
                         required
                         fullWidth
                     />
@@ -154,7 +154,7 @@ export default function FormS4(props) {
                                 return <MenuItem value={Slot.slot} disabled={Slot.seats === 0}>{Slot.slot} (Seats Left : {Slot.seats})</MenuItem>
                             }) : <></>}
                         </Select>
-                        <FormHelperText>{values.errors.preferredTime && "Please select any available slot. Incase of any discrepancies, contact the number given below"}</FormHelperText>
+                        <FormHelperText>{values.errors.preferredTime && "Please select the time slot wisely as changes won't be encouraged later. Incase of any discrepancies, contact the number given below"}</FormHelperText>
                     </FormControl>
                     <br />
                     <br />

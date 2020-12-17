@@ -12,7 +12,7 @@ export class FormS2 extends Component {
           error={values.errors.phone}
           helperText={values.errors.phone && "Please enter a valid phone number"}
           onChange={handleChange('phone')}
-          defaultValue={values.phone}
+          value={values.phone}
           margin="normal"
           fullWidth
           required
@@ -24,7 +24,7 @@ export class FormS2 extends Component {
           error={values.errors.whatsapp}
           helperText={values.errors.whatsapp && "Please enter a valid phone number"}
           onChange={handleChange('whatsapp')}
-          defaultValue={values.whatsapp}
+          value={values.whatsapp}
           margin="normal"
           fullWidth
           required

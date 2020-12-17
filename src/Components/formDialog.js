@@ -85,13 +85,20 @@ export class UserForm extends Component {
         return re.test(ph)
     }
 
+    strip(string) {
+        return string.replace(/^\s+|\s+$/g, '');
+    }
+
     checkValidation2 = (values) => {
         var newErrors = { ...this.state.errors };
         for (var i in values)
             this.checkValidation(i, values[i], newErrors);
-        if (Object.keys(values).length === 1)
-            this.setState({ errors: newErrors, [i]: values[i] });
-        else
+        if (Object.keys(values).length === 1) {
+            if (i === 'regNo' || i === 'email' || i === 'phone' || i === 'whatsapp')
+                this.setState({ errors: newErrors, [i]: this.strip(values[i]) });
+            else
+                this.setState({ errors: newErrors, [i]: values[i] });
+        } else
             this.setState({ errors: newErrors });
         console.log({ newErrors });
         for (i in values)
@@ -106,19 +113,19 @@ export class UserForm extends Component {
                 else newErrors.name = false;
                 break;
             case 'regNo':
-                if (!this.validateRegNo(newVal)) newErrors.regNo = true;
+                if (!this.validateRegNo(this.strip(newVal))) newErrors.regNo = true;
                 else newErrors.regNo = false;
                 break;
             case 'email':
-                if (!this.validateEmail(newVal)) newErrors.email = true;
+                if (!this.validateEmail(this.strip(newVal))) newErrors.email = true;
                 else newErrors.email = false;
                 break;
             case 'phone':
-                if (!this.validatePhone(newVal)) newErrors.phone = true;
+                if (!this.validatePhone(this.strip(newVal))) newErrors.phone = true;
                 else newErrors.phone = false;
                 break;
             case 'whatsapp':
-                if (!this.validatePhone(newVal)) newErrors.whatsapp = true;
+                if (!this.validatePhone(this.strip(newVal))) newErrors.whatsapp = true;
                 else newErrors.whatsapp = false;
                 break;
             case 'gender':
@@ -144,7 +151,8 @@ export class UserForm extends Component {
 
     // Handle fields change
     handleChange = input => e => {
-        this.checkValidation2({ [input]: e.target.value });
+        if (e.target.value !== " ")
+            this.checkValidation2({ [input]: e.target.value });
     };
 
     formStep = () => {
