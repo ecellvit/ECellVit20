@@ -81,7 +81,7 @@ export class UserForm extends Component {
     }
 
     validatePhone(ph) {
-        const re = /^([0-9]{10})$/g
+        const re = /([0-9]{7,15})$/g
         return re.test(ph)
     }
 
@@ -270,8 +270,8 @@ export class UserForm extends Component {
                         className="form-footer"
                         children={
                             <span>If you find any difficulty filling the form, feel free to contact &nbsp;
-                                <a style={{ display: 'inline' }} href="tel:+919873734018">Vinayak (9873734018)</a> &amp; &nbsp;
-                                <a style={{ display: 'inline' }} href="tel:+918290469207">Vinamra (8290469207)</a>
+                                <a style={{ display: 'inline' }} href="tel:+918290469207">Vinamra (8290469207)</a> &amp; &nbsp;
+                                <a style={{ display: 'inline' }} href="tel:+919873734018">Vinayak (9873734018)</a>
                             </span>
                         }
                     />

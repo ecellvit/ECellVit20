@@ -51,6 +51,7 @@ export default function FormS4(props) {
                         <br />Confirm your Registration number is <strong>{values.regNo}</strong>,
                         <br />Email is <strong>{values.email}</strong> and
                         <br />Whatsapp number is <strong>{values.whatsapp}</strong>
+                        <br />Department of choice is <strong>{values.dept}</strong>
                         <br />Please review your response before submitting.
                     </>
                 }

@@ -10,7 +10,7 @@ export class FormS2 extends Component {
           placeholder="Enter your phone Number"
           label="Phone Number"
           error={values.errors.phone}
-          helperText={values.errors.phone && "Please enter a valid phone number"}
+          helperText={values.errors.phone && "Please enter a valid phone number. Incase of an international number, add country code in the format +X"}
           onChange={handleChange('phone')}
           value={values.phone}
           margin="normal"
@@ -22,7 +22,7 @@ export class FormS2 extends Component {
           placeholder="Enter your WhatsApp Number"
           label="WhatsApp Number"
           error={values.errors.whatsapp}
-          helperText={values.errors.whatsapp && "Please enter a valid phone number"}
+          helperText={values.errors.whatsapp && "Please enter a valid phone number. Incase of an international number, add country code in the format +X"}
           onChange={handleChange('whatsapp')}
           value={values.whatsapp}
           margin="normal"

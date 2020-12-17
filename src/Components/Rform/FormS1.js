@@ -22,7 +22,7 @@ export class FormS1 extends Component {
                     placeholder="Enter Your Registration Number"
                     error={values.errors.regNo}
                     helperText={values.errors.regNo && "Enter a valid Registration number like 00XXX0000"}
-                    label="RegNo"
+                    label="Registration No."
                     onChange={handleChange('regNo')}
                     value={values.regNo}
                     margin="normal"

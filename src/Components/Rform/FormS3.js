@@ -55,7 +55,14 @@ export default function FormS3(props) {
       <Typography
         variant="body2"
         children={
-          <span>If you wish to apply for any other domain, please fill the form again</span>
+          <span>Our core team generally comprises of 80% Management, 10% Design and 10% Technical members.
+            <br />For Technical and Design, we are only recruiting people who have basic knowledge about programming and designing</span>
+        }
+      />
+      <Typography
+        variant="body2"
+        children={
+          <span>You cannot fill for multiple departments as of now, later you can change department once you get into the club</span>
         }
       />
     </>
