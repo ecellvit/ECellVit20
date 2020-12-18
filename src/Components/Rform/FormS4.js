@@ -128,13 +128,10 @@ export default function FormS4(props) {
                     />
                     <TextField
                         style={{ marginTop: 0, marginBottom: 4 }}
-                        placeholder="Your Management Related Skills"
-                        error={values.errors.skillset}
-                        helperText={values.errors.skillset && "Mention any skills you possess"}
-                        label="Skills"
+                        placeholder="Let us know your additional skills"
+                        label="Additional Skills"
                         onChange={handleChange('skillset')}
                         value={values.skillset}
-                        required
                         fullWidth
                     />
                     <FormControl

@@ -57,7 +57,7 @@ export class UserForm extends Component {
         else if (step === 4) {
             const { skillset, preferredTime, dept } = this.state;
             if (dept === 'Management') {
-                if (!this.checkValidation2({ 'skillset': skillset, 'preferredTime': preferredTime })) this.setState({ step: 5 })
+                if (!this.checkValidation2({ 'preferredTime': preferredTime })) this.setState({ step: 5 })
             } else if (!this.checkValidation2({ 'skillset': skillset })) this.setState({ step: 5 })
         }
     };
