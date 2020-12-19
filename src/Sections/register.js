@@ -45,14 +45,14 @@ function Register() {
             <div style={{ textAlign: 'center' }}>
                 {about}
                 <button className="redirectbtn" onClick={handleClickOpen}>
-                    Recruitment Form
+                    Recruitments Form
                 </button>
             </div>
         );
 
     return (
         <span id="register">
-            <DarkBg id="register" head="Recruitments" content={subhead} />
+            <DarkBg id="register" head="Extended Recruitments" content={subhead} />
             <Dialog
                 fullScreen={fullScreen}
                 open={open}
