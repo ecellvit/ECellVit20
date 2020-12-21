@@ -31,6 +31,11 @@ function Landing() {
                     <span className="iia">IDEATE. INNOVATE. ACTUATE.</span>
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
+                    <span className="down">
+                        <Link to="register" spy={true} smooth='easeInOutQuad' offset={0} duration={2000}>
+                            <button className="redirectbtn">Go to recruitments</button>
+                        </Link>
+                    </span>
                 </div>
                 <Link className="scrolldown" to="about" spy={true} smooth={true} offset={0} duration={800}>Scroll Down <i className="fa fa-angle-right"></i></Link>
             </div>
