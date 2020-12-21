@@ -6,7 +6,6 @@ import Footer from '../Sections/Footer';
 import Gallery from '../Sections/Gallery';
 import Team from '../Sections/Team';
 import Activities from '../Sections/Activities';
-import Register from '../Sections/register';
 
 
 function Main() {
@@ -18,7 +17,6 @@ function Main() {
       <Activities />
       <Team />
       <Gallery />
-      <Register/>
       <Footer />
     </div>
   );

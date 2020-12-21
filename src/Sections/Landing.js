@@ -32,8 +32,8 @@ function Landing() {
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
                     <span className="down">
-                        <Link to="register" spy={true} smooth='easeInOutQuad' offset={0} duration={2000}>
-                            <button className="redirectbtn">Go to recruitments</button>
+                        <Link to="/recruitments" spy={true} smooth='easeInOutQuad' offset={0} duration={2000}>
+                            <button className="redirectbtn">Recruitment Results</button>
                         </Link>
                     </span>
                 </div>

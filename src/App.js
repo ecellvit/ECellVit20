@@ -1,31 +1,22 @@
 import React from 'react';
-import Loader from './Components/Loader';
-import About from './Sections/About';
-import Landing from './Sections/Landing';
-import Footer from './Sections/Footer';
-import Gallery from './Sections/Gallery';
-import Team from './Sections/Team';
-import Activities from './Sections/Activities';
-import Register from './Sections/register';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import Main from './pages/main';
+import Recruitments from './pages/recruitments';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ErrorPage from './pages/ErrorPage';
 
 
-function Main() {
+function App() {
   return (
     <div className="App">
-      <GoogleReCaptchaProvider
-        reCaptchaKey="6LdXGwkaAAAAAHDub2OA24Hw42mA-7oKQIzstrRV"
-      >
-        <Loader timeout="1000" />
-        <Landing />
-        <About />
-        <Activities />
-        <Team />
-        <Gallery />
-        <Footer />
-      </GoogleReCaptchaProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route exact path="/recruitments" component={Recruitments} />
+          <Route path="*" component={ErrorPage} />
+        </Switch>
+      </Router>
     </div>
   );
 }
 
-export default Main;
+export default App;
