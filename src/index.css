@@ -261,9 +261,10 @@ html {
   text-transform: uppercase;
   transform: rotate(90deg);
   position: absolute;
+  color: aliceblue;
   font-weight: 600;
-  bottom: 65px;
-  right: -20px;
+  bottom: 70px;
+  right: -30px;
 }
 
 @media (max-width: 991px) {

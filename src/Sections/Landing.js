@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Nav from "../Components/Nav";
 import Social from "../Components/Social";
 import { Link } from "react-scroll";
+import { Link as RouterLink } from 'react-router-dom';
 
 function Landing() {
     const [head, setHead] = useState('Entrepreneurship Cell');
@@ -32,9 +33,9 @@ function Landing() {
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
                     <span className="down">
-                        <Link to="/recruitments" spy={true} smooth='easeInOutQuad' offset={0} duration={2000}>
+                        <RouterLink to="/recruitments">
                             <button className="redirectbtn">Recruitment Results</button>
-                        </Link>
+                        </RouterLink>
                     </span>
                 </div>
                 <Link className="scrolldown" to="about" spy={true} smooth={true} offset={0} duration={800}>Scroll Down <i className="fa fa-angle-right"></i></Link>

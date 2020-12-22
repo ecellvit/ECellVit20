@@ -10,7 +10,7 @@ import Activities from '../Sections/Activities';
 
 function Main() {
   return (
-    <div className="App">
+    <>
       <Loader timeout="1000" />
       <Landing />
       <About />
@@ -18,7 +18,7 @@ function Main() {
       <Team />
       <Gallery />
       <Footer />
-    </div>
+    </>
   );
 }
 
