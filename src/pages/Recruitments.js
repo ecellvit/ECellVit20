@@ -1,102 +1,171 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import NavResult from '../Components/NavResult';
 
-const columns = [
-    { id: 'name', label: 'Name', minWidth: 170 },
-    { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
-];
 
-function createData(name, code) {
-    return { name, code };
+function createData(SNo, Name, RegNo) {
+    return { SNo, Name, RegNo };
 }
 
 const rows = [
-    createData('India', 'IN'),
-    createData('China', 'CN'),
-    createData('Italy', 'IT'),
-    createData('United States', 'US'),
-    createData('Canada', 'CA'),
-    createData('Australia', 'AU'),
-    createData('Germany', 'DE'),
-    createData('Ireland', 'IE'),
-    createData('Mexico', 'MX'),
-    createData('Japan', 'JP'),
-    createData('France', 'FR'),
-    createData('United Kingdom', 'GB'),
-    createData('Russia', 'RU'),
-    createData('Nigeria', 'NG'),
-    createData('Brazil', 'BR'),
+    createData(1, 'Vinamra Khoria', '19BCE5678'),
+    createData(2, 'Mayank Jain', '19BCE0469'),
+    createData(3, 'Mayank Jain', '19BCE0469'),
 ];
 
 const useStyles = makeStyles({
-    root: {
-        width: '30%',
-    },
-    container: {
-        maxHeight: 440,
+    table: {
+        minWidth: 300,
     },
 });
 
-export default function Recruitments() {
-    const classes = useStyles();
-    const [page, setPage] = React.useState(0);
-    const [trows, setTRows] = React.useState(rows);
 
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
+export default function CustomizedTables() {
+
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
     };
 
+    function TabPanel(props) {
+        const { children, value, index, ...other } = props;
+
+        return (
+            <div
+                role="tabpanel"
+                hidden={value !== index}
+                id={`simple-tabpanel-${index}`}
+                aria-labelledby={`simple-tab-${index}`}
+                {...other}
+            >
+                {value === index && (
+                    <Box p={3}>
+                        <Typography>{children}</Typography>
+                    </Box>
+                )}
+            </div>
+        );
+    }
+
+    TabPanel.propTypes = {
+        children: PropTypes.node,
+        index: PropTypes.any.isRequired,
+        value: PropTypes.any.isRequired,
+    };
+
+    function a11yProps(index) {
+        return {
+            id: `simple-tab-${index}`,
+            'aria-controls': `simple-tabpanel-${index}`,
+        };
+    }
+
+    const classes = useStyles();
+
     return (
-        <Paper className={classes.root}>
-            <TableContainer className={classes.container}>
-                <Table stickyHeader aria-label="sticky table">
-                    <TableHead>
-                        <TableRow>
-                            {columns.map((column) => (
-                                <TableCell
-                                    key={column.id}
-                                    align={column.align}
-                                    style={{ minWidth: column.minWidth }}
-                                >
-                                    {column.label}
-                                </TableCell>
-                            ))}
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {trows.slice(page * 10, page * 10 + 10).map((row) => {
-                            return (
-                                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                                    {columns.map((column) => {
-                                        const value = row[column.id];
-                                        return (
-                                            <TableCell key={column.id} align={column.align}>
-                                                {column.format && typeof value === 'number' ? column.format(value) : value}
+        <div className="result-table-parent">
+            <div className="result-table-parent"><NavResult></NavResult></div>
+            {/* <div className="result-navbar">Result Page</div> */}
+            <div className="result-body">
+                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" className="tab-styling">
+                    <Tab label="M" className="tab1" {...a11yProps(0)} />
+                    <Tab label="T" {...a11yProps(1)} />
+                    <Tab label="D" {...a11yProps(2)} />
+                </Tabs>
+                <TabPanel value={value} index={0}>
+                    <div className="result-table-div">
+                        <TableContainer component={Paper} className="result-table table-container-color">
+                            <Table className={classes.table} aria-label="customized table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell size='small'>SNo</TableCell>
+                                        <TableCell align="center" size='small'>Name</TableCell>
+                                        <TableCell align="center" size='small'>RegNo</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rows.map((row) => (
+                                        <TableRow key={row.SNo} className="table-row">
+                                            <TableCell component="th" scope="row" className="table-row">
+                                                {row.SNo}
                                             </TableCell>
-                                        );
-                                    })}
-                                </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-            <TablePagination
-                rowsPerPageOptions={[10]}
-                component="div"
-                count={trows.length}
-                rowsPerPage={10}
-                page={page}
-                onChangePage={handleChangePage}
-            />
-        </Paper>
+                                            <TableCell align="center" className="table-row">{row.Name}</TableCell>
+                                            <TableCell align="center" className="table-row">{row.RegNo}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </div>
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                    <div className="result-table-div">
+                        <TableContainer component={Paper} className="result-table">
+                            <Table className={classes.table} aria-label="customized table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell size='small'>SNo</TableCell>
+                                        <TableCell align="center" size='small'>Name</TableCell>
+                                        <TableCell align="center" size='small'>RegNo</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rows.map((row) => (
+                                        <TableRow key={row.SNo}>
+                                            <TableCell component="th" scope="row">
+                                                {row.SNo}
+                                            </TableCell>
+                                            <TableCell align="center">{row.Name}</TableCell>
+                                            <TableCell align="center">{row.RegNo}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </div>
+                </TabPanel>
+                <TabPanel value={value} index={2}>
+                    <div className="result-table-div">
+                        <TableContainer component={Paper} className="result-table">
+                            <Table className={classes.table} aria-label="customized table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell size='small'>SNo</TableCell>
+                                        <TableCell align="center" size='small'>Name</TableCell>
+                                        <TableCell align="center" size='small'>RegNo</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rows.map((row) => (
+                                        <TableRow key={row.SNo}>
+                                            <TableCell component="th" scope="row">
+                                                {row.SNo}
+                                            </TableCell>
+                                            <TableCell align="center">{row.Name}</TableCell>
+                                            <TableCell align="center">{row.RegNo}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </div>
+                </TabPanel>
+            </div>
+        </div>
     );
 }
+
+

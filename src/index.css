@@ -1297,3 +1297,71 @@ loading
 .MuiDialog-paperFullScreen .form-footer {
   min-height: 96px;
 }
+
+
+
+/**********/
+.result-table {
+  margin-left: 15%;
+  /* width: 50%; */
+}
+
+.result-navbar{
+  font-size: 300%;
+  color: white;
+}
+
+.result-table-parent {
+  background-color: #181327 !important;
+}
+
+.result-table-div {
+  width: 75%;
+  text-align: center;
+  padding-bottom: 50%;
+}
+
+@media (max-width: 600px){
+  .result-table-div {
+    width: 95%;
+  }
+
+  .result-table {
+    margin-left: 3%;
+  }
+}
+
+/*** RESULT BODY ***/
+
+.result-body{
+  margin-top: 70px;
+}
+
+/*** TABLE ROW ***/
+
+.table-row {
+  color: white !important;
+  background-color: #302552;
+}
+
+.table-container-color {
+  background-color:#00bd56 !important;
+}
+
+.tab-styling {
+  color: white;
+  margin-left: 650px;
+}
+
+@media only screen and (max-width: 500px) {
+  /* .tab1 {
+    max-width: 100%;
+    width: 100%;
+  } */
+}
+
+/* @media (max-width: 500px){
+  .tab-styling{
+    width: 50%;
+  }
+} */
