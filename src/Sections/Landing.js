@@ -33,7 +33,7 @@ function Landing() {
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
                     <span className="down">
-                        <RouterLink to="/recruitments">
+                        <RouterLink to="/results">
                             <button className="redirectbtn">Recruitment Results</button>
                         </RouterLink>
                     </span>

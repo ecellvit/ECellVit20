@@ -1,5 +1,5 @@
-import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import React, { useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -13,21 +13,11 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import NavResult from '../Components/NavResult';
-
-
-function createData(SNo, Name, RegNo) {
-    return { SNo, Name, RegNo };
-}
-
-const rows = [
-    createData(1, 'Vinamra Khoria', '19BCE5678'),
-    createData(2, 'Mayank Jain', '19BCE0469'),
-    createData(3, 'Mayank Jain', '19BCE0469'),
-];
+import axios from 'axios';
 
 const useStyles = makeStyles({
     table: {
-        minWidth: 300,
+        minWidth: 300
     },
 });
 
@@ -35,6 +25,9 @@ const useStyles = makeStyles({
 export default function CustomizedTables() {
 
     const [value, setValue] = React.useState(0);
+    const [rowTech, setTech] = React.useState([]);
+    const [rowDes, setDes] = React.useState([]);
+    const [rowMan, setMan] = React.useState([]);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -73,95 +66,128 @@ export default function CustomizedTables() {
         };
     }
 
+    function setRows(data) {
+        console.log(data)
+        let tec = [];
+        let man = [];
+        let des = [];
+        for (var i = 0; i < data.length; i++) {
+            switch (data[i][2]) {
+                case 'Technical':
+                    tec.push({ SNo: tec.length + 1, Name: data[i][1], RegNo: data[i][0] });
+                    break;
+                case 'Design':
+                    des.push({ SNo: des.length + 1, Name: data[i][1], RegNo: data[i][0] });
+                    break;
+                case 'Management':
+                    man.push({ SNo: man.length + 1, Name: data[i][1], RegNo: data[i][0] });
+                    break;
+                default:
+                    break;
+            }
+        }
+        setTech(tec);
+        setMan(man);
+        setDes(des);
+    }
+
     const classes = useStyles();
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                await axios.get('https://script.google.com/macros/s/AKfycbxRAtFddVR0f_zaCb82HS_r6HE6jcqsrDwfFA4vxegZmTd1goM/exec')
+                    .then((res) => {
+                        console.log(res);
+                        setRows(res.data.data);
+                    });
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getData()
+    }, [])
 
     return (
         <div className="result-table-parent">
-            <div className="result-table-parent"><NavResult></NavResult></div>
-            {/* <div className="result-navbar">Result Page</div> */}
+            <NavResult />
             <div className="result-body">
-                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" className="tab-styling">
-                    <Tab label="M" className="tab1" {...a11yProps(0)} />
-                    <Tab label="T" {...a11yProps(1)} />
-                    <Tab label="D" {...a11yProps(2)} />
+                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+                    <Tab label="Management" className="tab1" {...a11yProps(0)} />
+                    <Tab label="Technical" {...a11yProps(1)} />
+                    <Tab label="Design" {...a11yProps(2)} />
                 </Tabs>
                 <TabPanel value={value} index={0}>
-                    <div className="result-table-div">
-                        <TableContainer component={Paper} className="result-table table-container-color">
-                            <Table className={classes.table} aria-label="customized table">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell size='small'>SNo</TableCell>
-                                        <TableCell align="center" size='small'>Name</TableCell>
-                                        <TableCell align="center" size='small'>RegNo</TableCell>
+                    <TableContainer component={Paper} className="result-table table-container-color">
+                        <Table stickyHeader className={classes.table} aria-label="customized table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>SNo</TableCell>
+                                    <TableCell align="center">Name</TableCell>
+                                    <TableCell align="center">RegNo</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {rowMan.map((row) => (
+                                    <TableRow key={row?.SNo} className="table-row">
+                                        <TableCell component="th" scope="row" className="table-row">
+                                            {row?.SNo}
+                                        </TableCell>
+                                        <TableCell align="center" className="table-row">{row?.Name}</TableCell>
+                                        <TableCell align="center" className="table-row">{row?.RegNo}</TableCell>
                                     </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {rows.map((row) => (
-                                        <TableRow key={row.SNo} className="table-row">
-                                            <TableCell component="th" scope="row" className="table-row">
-                                                {row.SNo}
-                                            </TableCell>
-                                            <TableCell align="center" className="table-row">{row.Name}</TableCell>
-                                            <TableCell align="center" className="table-row">{row.RegNo}</TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                    </div>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <div className="result-table-div">
-                        <TableContainer component={Paper} className="result-table">
-                            <Table className={classes.table} aria-label="customized table">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell size='small'>SNo</TableCell>
-                                        <TableCell align="center" size='small'>Name</TableCell>
-                                        <TableCell align="center" size='small'>RegNo</TableCell>
+                    <TableContainer component={Paper} className="result-table table-container-color">
+                        <Table stickyHeader className={classes.table} aria-label="customized table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>SNo</TableCell>
+                                    <TableCell align="center">Name</TableCell>
+                                    <TableCell align="center">RegNo</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {rowTech.map((row) => (
+                                    <TableRow key={row?.SNo} className="table-row">
+                                        <TableCell component="th" scope="row" className="table-row">
+                                            {row?.SNo}
+                                        </TableCell>
+                                        <TableCell align="center" className="table-row">{row?.Name}</TableCell>
+                                        <TableCell align="center" className="table-row">{row?.RegNo}</TableCell>
                                     </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {rows.map((row) => (
-                                        <TableRow key={row.SNo}>
-                                            <TableCell component="th" scope="row">
-                                                {row.SNo}
-                                            </TableCell>
-                                            <TableCell align="center">{row.Name}</TableCell>
-                                            <TableCell align="center">{row.RegNo}</TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                    </div>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    <div className="result-table-div">
-                        <TableContainer component={Paper} className="result-table">
-                            <Table className={classes.table} aria-label="customized table">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell size='small'>SNo</TableCell>
-                                        <TableCell align="center" size='small'>Name</TableCell>
-                                        <TableCell align="center" size='small'>RegNo</TableCell>
+                    <TableContainer component={Paper} className="result-table table-container-color">
+                        <Table stickyHeader className={classes.table} aria-label="customized table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>SNo</TableCell>
+                                    <TableCell align="center">Name</TableCell>
+                                    <TableCell align="center">RegNo</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {rowDes.map((row) => (
+                                    <TableRow key={row?.SNo} className="table-row">
+                                        <TableCell component="th" scope="row" className="table-row">
+                                            {row?.SNo}
+                                        </TableCell>
+                                        <TableCell align="center" className="table-row">{row?.Name}</TableCell>
+                                        <TableCell align="center" className="table-row">{row?.RegNo}</TableCell>
                                     </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {rows.map((row) => (
-                                        <TableRow key={row.SNo}>
-                                            <TableCell component="th" scope="row">
-                                                {row.SNo}
-                                            </TableCell>
-                                            <TableCell align="center">{row.Name}</TableCell>
-                                            <TableCell align="center">{row.RegNo}</TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                    </div>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </TabPanel>
             </div>
         </div>
