@@ -33,9 +33,9 @@ function Landing() {
                     <span className="head">{head}</span>
                     <span className="vit">VIT VELLORE</span>
                     <span className="down">
-                        <RouterLink to="/results">
-                            <button className="redirectbtn">Recruitment Results</button>
-                        </RouterLink>
+                        <a href="esummit.ecellvit.com" target="_blank" rel="noreferrer">
+                            <button className="redirectbtn">E-Summit 21</button>
+                        </a>
                     </span>
                 </div>
                 <Link className="scrolldown" to="about" spy={true} smooth={true} offset={0} duration={800}>Scroll Down <i className="fa fa-angle-right"></i></Link>
