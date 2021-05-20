@@ -29,27 +29,103 @@ function Board(props) {
 
 function Team() {
 	return (
-		<div id="team">
-			<DarkBg head="Team" subhead="Our Leaders" />
-			<div className="team">
-				<Board name="Aditya Shyamsundar" designation="Managing Director" pic="./assets/Board/Aditya.jpg" cls="one" linkedin="https://www.linkedin.com/in/aditya-shyamsundar-096660180" />
-				<Board name="Khwaab Thareja" designation="Deputy Managing Director" pic="./assets/Board/Khwaab.jpg" cls="two" linkedin="https://www.linkedin.com/in/khwaab-thareja-9aa178197" />
-				<Board name="Sneha Kelkar" designation="Deputy Managing Director" pic="./assets/Board/Sneha.jpg" cls="two" linkedin="https://in.linkedin.com/in/sneha-kelkar-14214a171" />
-				<Board name="Prithvi Murjani" designation="Director of Operations" pic="./assets/Board/Prithvi.jpg" cls="three" linkedin="https://www.linkedin.com/in/prithvikm" />
-				<Board name="Sakshi Sinhal" designation="Director of External Affairs" pic="./assets/Board/Sakshi.jpg" cls="three" linkedin="https://www.linkedin.com/in/sakshi-sinhal-b02a83179" />
-				<Board name="Hiren Jani" designation="Director of Sales and Registrations" pic="./assets/Board/Hiren.jpg" cls="three" linkedin="http://linkedin.com/in/hiren-jani-a89734170" />
-				<Board name="Akshay Menon" designation="Director of Content Strategy" pic="./assets/Board/Akshay.jpg" cls="three" linkedin="https://www.linkedin.com/in/akshay-menon-211980181" />
-				<Board name="Manan Agarwal" designation="Director of Design" pic="./assets/Board/Manan.jpg" cls="three" linkedin="https://www.linkedin.com/in/manan-agarwal-31262a16b/" />
-				<Board name="Naman Parmani" designation="Director of Marketing" pic="./assets/Board/NamanP.jpg" cls="three" linkedin="https://www.linkedin.com/in/naman-agarwal-950683179/" />
-				<Board name="Ishan Sawhney" designation="Director of Research and Development" pic="./assets/Board/Ishan.jpg" cls="three" linkedin="https://in.linkedin.com/in/ishan-sawhney-5b82aa1a0" />
-				<Board name="Amritha Subramanian" designation="Director of Collaborations" pic="./assets/Board/Amritha.jpg" cls="three" linkedin="https://www.linkedin.com/in/amritha-subramanian-092a87179" />
-				<Board name="Nimish Batra" designation="Director of Finance" pic="./assets/Board/Vani.jpg" cls="three" linkedin="https://www.linkedin.com/in/batranimish" />
-				<Board name="Rahul Pandey" designation="Director of Public Relations" pic="./assets/Board/Rahul.jpg" cls="three" linkedin="https://www.linkedin.com/in/rahul-pandey-35096217a" />
-				<Board name="Abhinav Jaishanker" designation="Director of Sponsorship" pic="./assets/Board/Abhinav.jpg" cls="three" linkedin="https://www.linkedin.com/in/abhinav-jaishanker-b12b95179" />
-				<Board name="Naman Agarwal" designation="Director of Technology" pic="./assets/Board/Naman.jpg" cls="three" linkedin="https://www.linkedin.com/in/naman-agarwal-950683179/" />
-			</div>
-		</div>
-	)
+    <div id="team">
+      <DarkBg head="Team" subhead="Our Leaders" />
+      <div className="team">
+        <Board
+          name="Namrata Singhal"
+          designation="Managing Director"
+          pic="./assets/Board/Namrata.jpg"
+          cls="one"
+          linkedin="https://www.linkedin.com/in/namrata-singhal-ba8735199/"
+        />
+        <Board
+          name="Nipun Mahajan"
+          designation="Deputy Managing Director"
+          pic="./assets/Board/Nipun.jpg"
+          cls="two"
+          linkedin="https://www.linkedin.com/in/nipun-mahajan-6b6718165/"
+        />
+        <Board
+          name="Pearl Motwani"
+          designation="Deputy Managing Director"
+          pic="./assets/Board/Pearl.jpg"
+          cls="two"
+          linkedin="https://www.linkedin.com/in/pearl-motwani-862089190/"
+        />
+        <Board
+          name="Rishabh Mehta"
+          designation="Director of Operations"
+          pic="./assets/Board/Rishabh.jpg"
+          cls="two"
+          linkedin="https://www.linkedin.com/in/rishabh-mehta1605/"
+        />
+        <Board
+          name="Aaditya Pareek"
+          designation="Director of Projects"
+          pic="./assets/Board/Aaditya.jpg"
+          cls="two"
+          linkedin="https://www.linkedin.com/in/aaditya-pareek-29646318a/"
+        />
+        <Board
+          name="Mayank Jain"
+          designation="Director of Content Strategy"
+          pic="./assets/Board/Mayank.jpg"
+          cls="three"
+          linkedin="https://www.linkedin.com/in/mayank-1010/"
+        />
+        <Board
+          name="Param Sharma"
+          designation="Director of Design and Media"
+          pic="./assets/Board/Param.jpg"
+          cls="three"
+          linkedin="https://www.linkedin.com/in/paramssharma/"
+        />
+        <Board
+          name="Yashraj Singh"
+          designation="Director of Outreach"
+          pic="./assets/Board/Yashraj.jpg"
+          cls="three"
+          linkedin="https://www.linkedin.com/in/yashraj-singh-973374187/"
+        />
+        <Board
+          name="Sanjiv Mohanty"
+          designation="Director of Research and Development"
+          pic="./assets/Board/Sanjiv.jpg"
+          cls="three"
+          linkedin="https://www.linkedin.com/in/sanjiv-mohanty-480397199/"
+        />
+        <Board
+          name="Anaswara Santhosh"
+          designation="Director of Collaborations"
+          pic="./assets/Board/Anaswara.jpg"
+          cls="three"
+          linkedin="https://www.linkedin.com/in/anaswara-santhosh-174964199/"
+        />
+        <Board
+          name="Sahib Dua"
+          designation="Director of Finance and Sponsorship"
+          pic="./assets/Board/Sahib.jpg"
+          cls="three"
+          linkedin="https://www.linkedin.com/in/sahib-dua-18b7121a1/"
+        />
+        <Board
+          name="Akriti Agarwal"
+          designation="Director of Public Relations"
+          pic="./assets/Board/Akriti.jpg"
+          cls="two"
+          linkedin="https://www.linkedin.com/in/akriti-agarwal-5295b61a0/"
+        />
+        <Board
+          name="Vinayak Gupta"
+          designation="Director of Technology"
+          pic="./assets/Board/Vinayak.jpg"
+          cls="two"
+          linkedin="https://www.linkedin.com/in/vinayakguptaa/"
+        />
+      </div>
+    </div>
+  );
 }
 
 export default Team;
