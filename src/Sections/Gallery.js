@@ -5,7 +5,7 @@ import GalleryPics from '../Components/GalleryPics';
 function Gallery() {
     return (
         <div className="gallery" id="gallery">
-            <DarkBg head="Gallery" />
+            {/* <DarkBg head="Gallery" /> */}
             <GalleryPics />
         </div>
     )

@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -17,7 +17,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 a {
@@ -138,7 +138,7 @@ html {
   display: block;
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  border-radius: 20%;
 }
 
 .flip-box-inner {
@@ -157,7 +157,7 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 20%;
 }
 
 .flip-box-front {
@@ -167,7 +167,9 @@ html {
 
 .flip-box-front img {
   width: 100%;
-  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20%;
 }
 
 .flip-box-back {
@@ -188,7 +190,7 @@ html {
 
 .background {
   background-color: #000000;
-  background-image: url("./final_cover.jpg");
+  background-image: url('./final_cover.png');
   filter: blur(2px);
   -webkit-filter: blur(2px);
   background-size: cover;
@@ -1035,7 +1037,7 @@ loading
 .loader > .cube > .sides > .loader-logo {
   background-color: transparent;
   border: none;
-  background-image: url("./favicon.png");
+  background-image: url('./favicon.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1105,6 +1107,10 @@ loading
   height: fit-content;
   box-shadow: 0 2px 2px #0003;
   transition: all 0.3s ease-in-out;
+}
+
+.event-banner {
+  width: 88%;
 }
 
 .events .eimgdesc {
@@ -1200,7 +1206,8 @@ loading
 }
 
 @media (max-width: 768px) {
-  .events {
+  .events,
+  .event-banner {
     width: 36%;
   }
   .events .edesc {
@@ -1209,8 +1216,12 @@ loading
 }
 
 @media (max-width: 600px) {
-  .events {
+  .events,
+  .event-banner {
     width: 80%;
+  }
+  .gal {
+    display: none !important;
   }
 }
 
