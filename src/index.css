@@ -1162,6 +1162,10 @@ loading
   max-height: 120px;
 }
 
+.event-banner .edesc {
+  font-size: 1.6rem;
+}
+
 .events .edesc::-webkit-scrollbar {
   width: 2px;
 }
@@ -1209,6 +1213,9 @@ loading
   .events,
   .event-banner {
     width: 36%;
+  }
+  .event-banner .edesc {
+    font-size: 1rem;
   }
   .events .edesc {
     padding: 15px 20px;
