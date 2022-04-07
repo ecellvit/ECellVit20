@@ -33,12 +33,12 @@ function Landing() {
           <span className="vit">VIT VELLORE</span>
           <span className="down">
             <a
-              href="https://bit.ly/ResoluteRegistration"
+              href="https://esummit.ecellvit.com"
               target="_blank"
               rel="noreferrer"
             >
               <button className="redirectbtn">
-                Resolute <i class="fas fa-external-link-alt"></i>
+                E-Summit <i class="fas fa-external-link-alt"></i>
               </button>
             </a>
           </span>

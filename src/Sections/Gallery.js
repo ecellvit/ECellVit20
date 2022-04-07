@@ -1,5 +1,5 @@
 import React from 'react';
-import DarkBg from '../Components/DarkBg';
+// import DarkBg from '../Components/DarkBg';
 import GalleryPics from '../Components/GalleryPics';
 
 function Gallery() {

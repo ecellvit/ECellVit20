@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from '../Components/Loader';
+// import Loader from '../Components/Loader';
 import About from '../Sections/About';
 import Landing from '../Sections/Landing';
 import Footer from '../Sections/Footer';
@@ -11,7 +11,7 @@ import Activities from '../Sections/Activities';
 function Main() {
   return (
     <>
-      <Loader timeout="1000" />
+      {/* <Loader timeout="1000" /> */}
       <Landing />
       <About />
       <Activities />
