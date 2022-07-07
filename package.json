@@ -12,7 +12,7 @@
     "axios": "^0.21.0",
     "chokidar": "^3.5.1",
     "install": "^0.13.0",
-    "npm": "^7.13.0",
+    "npm": "^8.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-google-recaptcha-v3": "^1.7.0",
