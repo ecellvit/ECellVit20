@@ -5,20 +5,23 @@ import { Link } from "react-scroll";
 
 function Landing() {
   const [head, setHead] = useState("Entrepreneurship Cell");
-  window.addEventListener("resize", () => {
-    var txt = "E-Cell";
-    if (window.innerWidth > 400) {
-      txt = "Entrepreneurship Cell";
-    }
-    setHead(txt);
-  });
-  window.addEventListener("load", () => {
-    var txt = "E-Cell";
-    if (window.innerWidth > 400) {
-      txt = "Entrepreneurship Cell";
-    }
-    setHead(txt);
-  });
+  
+  if (typeof window !== "undefined") {
+    window.addEventListener("resize", () => {
+      var txt = "E-Cell";
+      if (window.innerWidth > 400) {
+        txt = "Entrepreneurship Cell";
+      }
+      setHead(txt);
+    });
+    window.addEventListener("load", () => {
+      var txt = "E-Cellsss";
+      if (window.innerWidth > 400) {
+        txt = "Entrepreneurship Cell";
+      }
+      setHead(txt);
+    });
+  }
 
   return (
     <div id="home">
