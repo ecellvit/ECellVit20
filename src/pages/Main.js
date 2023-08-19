@@ -6,6 +6,7 @@ import Footer from '../Sections/Footer';
 import Gallery from '../Sections/Gallery';
 import Team from '../Sections/Team';
 import Activities from '../Sections/Activities';
+import Faculty from '../Sections/faculty';
 
 
 function Main() {
@@ -15,6 +16,7 @@ function Main() {
       <Landing />
       <About />
       <Activities />
+      <Faculty />
       <Team />
       <Gallery />
       <Footer />

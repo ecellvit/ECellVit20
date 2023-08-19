@@ -10,6 +10,7 @@ function About() {
             <DarkBg id="about" head="About Us" content={about} />
             <Counters />
             <DarkBg head="VIT &nbsp;TBI" content={whatVdo} />
+            <DarkBg head="Student Startup Venture" content={whatVdo} />
         </span>
     );
 }
