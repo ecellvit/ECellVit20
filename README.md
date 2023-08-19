@@ -11,3 +11,10 @@ The official portal of E-cell VIT.
 + <a href="https://github.com/gvinayakgupta">Vinayak Gupta</a>
 + <a href="https://github.com/vinamrak">Vinamra Khoria</a>
 
+## Get Started
+After cloning
+
++ `npm install`
+
+Then
++ `npm start`
