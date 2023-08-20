@@ -11,5 +11,10 @@ The official portal of E-cell VIT.
 + <a href="https://github.com/gvinayakgupta">Vinayak Gupta</a>
 + <a href="https://github.com/vinamrak">Vinamra Khoria</a>
 
-![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)
-![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
+## Get Started
+After cloning
+
++ `npm install`
+
+Then
++ `npm start`

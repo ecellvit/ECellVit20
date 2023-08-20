@@ -1403,3 +1403,19 @@ loading
     /* width: 100vw; */
   }
 }
+
+.leftImage {
+  /* flex:1; */
+  max-width: 25%;
+}
+
+.rightText {
+  /* flex:3; */
+  max-width: 75%;
+}
+
+.facultyContainter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
