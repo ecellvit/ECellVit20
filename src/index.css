@@ -1405,17 +1405,19 @@ loading
 }
 
 .leftImage {
+  display:inline;
   /* flex:1; */
-  max-width: 25%;
+  /* max-width: 25%; */
 }
 
 .rightText {
-  /* flex:3; */
-  max-width: 75%;
+  display:inline;
+  /* flex:1; */
+  /* max-width: 75%; */
 }
 
 .facultyContainter {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* align-items: center; */
 }
