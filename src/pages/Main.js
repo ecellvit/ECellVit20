@@ -6,8 +6,7 @@ import Footer from '../Sections/Footer';
 import Gallery from '../Sections/Gallery';
 import Team from '../Sections/Team';
 import Activities from '../Sections/Activities';
-import Faculty from '../Sections/faculty';
-
+import Faculty from '../Sections/Faculty';
 
 function Main() {
   return (
