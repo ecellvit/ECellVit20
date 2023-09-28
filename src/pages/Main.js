@@ -16,7 +16,7 @@ function Main() {
       <Landing />
       <About />
       <Activities />
-      {/* <Faculty /> */}
+      <Faculty />
       <Team />
       <Gallery />
       <Footer />
