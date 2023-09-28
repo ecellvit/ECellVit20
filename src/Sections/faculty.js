@@ -7,7 +7,7 @@ function Faculty() {
 
   return (
     <div id="Faculty">
-      <DarkBg head="Faculty" faculty={facultyText}/>
+      <DarkBg head="Our Faculty Co-ordinator" faculty={facultyText}/>
     </div>
   );
 }
