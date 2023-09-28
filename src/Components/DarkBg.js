@@ -40,13 +40,14 @@ function DarkBg(props) {
             {props.faculty &&
                 <div className='facultyContainer'>
                     <div className='leftImage'>
-                        <Board
+                        {/* <Board
                             name="Vidhya S"
                             designation="Faculty Coordinator"
                             pic=""
                             // cls="one"
                             linkedin=""
-                        />
+                        /> */}
+                        <img src={`assets/Board/Vidhya.jpeg`} height={200} alt="Vidhya S" />
                     </div>
                     <div className='rightText'>
                         <p className="content" data-aos="zoom-in" data-aos-offset="-20">{props.faculty}</p>

@@ -3,12 +3,11 @@ import DarkBg from "../Components/DarkBg";
 
 function Faculty() {
 
-  const facultyText = "Entrepreneurship Cell is a student body based in VIT, Vellore which aims at fostering entrepreneurial spirit amongst young aspirants by providing them with a platform and required resources for actuating their ideas into successful business ventures. E-Cell strives at attaining an ideal entrepreneurial environment in the campus and we believe in taking strides towards establishing an ever-growing, an ever-improving Start-Up environment. Our sole approach is to magnify the reach and to set up a diverse pool of investors, evaluators and mentors.";
-
+  const facultyText = "We are honoured to introduce Dr. Vidhya S, the faculty coordinator of the Entrepreneurship Cell and also the Head of the Department of Electronics and Communication with specialization in Biomedical Engineering. Her multifaceted expertise and unwavering dedication make her a true pillar of strength within our community. Dr. Vidhya S's rich academic background, combined with her visionary leadership, has been instrumental in shaping E-Cell's trajectory. Her unwavering commitment to nurturing young minds and providing them with the tools they need to succeed sets her apart as a true mentor and guide. Under her mentorship, the Entrepreneurship Cell has flourished into a vibrant ecosystem where innovation thrives, ideas take shape, and dreams come to fruition."
 
   return (
     <div id="Faculty">
-      <DarkBg head="Faculty" faculty={facultyText}/>
+      <DarkBg head="Our Faculty Co-ordinator" faculty={facultyText}/>
     </div>
   );
 }
