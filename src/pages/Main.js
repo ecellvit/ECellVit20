@@ -8,7 +8,6 @@ import Team from '../Sections/Team';
 import Activities from '../Sections/Activities';
 import Faculty from '../Sections/Faculty';
 
-
 function Main() {
   return (
     <>
