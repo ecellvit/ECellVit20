@@ -7,7 +7,7 @@ function Footer() {
             <img src="./assets/Logos/ecell-white.png" alt="E-cell VIT" />
             <span className="iia">IDEATE. INNOVATE. ACTUATE.</span>
             <a href="mailto:helloecellvit@gmail.com">helloecellvit@gmail.com</a>
-            <a href="tel:+91 6306 311 799">+91 6306 311 799</a>
+            <a href="tel:+91 8777 793 331">+91 8777 793 331</a>
             <Social position="bottom" />
         </div>
     );
